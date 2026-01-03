@@ -1,0 +1,38 @@
+{
+  "selected_provider": "gpt-neo-local",
+  "selected_model": "gpt-neo-1.3B",
+  "providers": {
+    "gpt-neo-local": {
+      "enabled": true,
+      "notes": "Default offline baseline. Actual model path/config defined later."
+    },
+    "ollama-local": {
+      "enabled": true,
+      "base_url": "http://localhost:11434/api",
+      "auth": { "method": "none" }
+    },
+    "ollama-cloud": {
+      "enabled": false,
+      "base_url": "https://ollama.com/api",
+      "auth": {
+        "method": "signin_or_api_key",
+        "env_var_name": "OLLAMA_API_KEY"
+      }
+    },
+    "openai": {
+      "enabled": false,
+      "base_url": "user-configurable",
+      "auth": { "method": "api_key", "env_var_name": "OPENAI_API_KEY" }
+    },
+    "gemini": {
+      "enabled": false,
+      "base_url": "user-configurable",
+      "auth": { "method": "api_key_or_oauth", "env_var_name": "GEMINI_API_KEY" }
+    },
+    "xai": {
+      "enabled": false,
+      "base_url": "user-configurable",
+      "auth": { "method": "api_key", "env_var_name": "XAI_API_KEY" }
+    }
+  }
+}
