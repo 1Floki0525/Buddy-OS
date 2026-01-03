@@ -1,0 +1,34 @@
+name: buddy-core
+base: core24
+version: '0.1'
+summary: Buddy-OS core broker and CLI
+description: |
+  Core Buddy-OS broker daemon (buddy_actionsd) and CLI (buddy_cli)
+  that the desktop and Cosmic UI talk to.
+
+grade: devel
+confinement: classic
+
+apps:
+  buddy-cli:
+    command: bin/buddy-cli
+
+  buddy-actionsd:
+    command: bin/buddy-actionsd
+    daemon: simple
+    restart-condition: on-failure
+
+parts:
+  buddy-core:
+    plugin: dump
+    source: ../..
+    stage:
+      - buddy/buddy_cli.py
+      - broker/buddy_actionsd.py
+      - broker/policy.json
+      - snaps/buddy-core/bin/*
+    organize:
+      buddy/buddy_cli.py: lib/buddy/buddy_cli.py
+      broker/buddy_actionsd.py: lib/broker/buddy_actionsd.py
+      broker/policy.json: etc/buddy/policy.json
+      snaps/buddy-core/bin/: bin/

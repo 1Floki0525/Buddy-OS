@@ -1,0 +1,22 @@
+FROM docker.io/snapcore/snapcraft:stable
+
+# Noninteractive APT inside the container
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Make sure core tools for image/ISO building exist
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    xorriso \
+    ubuntu-image \
+    qemu-utils \
+    squashfs-tools \
+    mtools \
+    dosfstools \
+    parted \
+    e2fsprogs \
+ && rm -rf /var/lib/apt/lists/*
+
+# Work in /workspace (our repo bind-mount)
+WORKDIR /workspace
+
+# Default entrypoint: plain bash shell
+CMD ["bash"]

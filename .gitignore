@@ -1,55 +1,26 @@
-# Buddy-OS gitignore
+# Buddy-OS build outputs
+/build/*
+!/build/.gitkeep
 
-# OS / Editor
-.DS_Store
-Thumbs.db
+# Common build junk
+*.log
+*.tmp
 *.swp
 *.swo
-*~
-.vscode/
-.idea/
+.DS_Store
 
-# Python
+# Node / Python
+node_modules/
+.venv/
 __pycache__/
 *.pyc
-*.pyo
-*.pyd
-.venv/
-venv/
-.env
 
-# Node / JS
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Build artifacts (keep build/ directory but ignore heavy outputs)
-build/**/*.iso
-build/**/*.img
-build/**/*.qcow2
-build/**/*.raw
-build/**/*.xz
-build/**/*.gz
-build/**/*.zst
-build/**/*.log
-
-# Snapcraft / packaging outputs
-*.snap
+# Snapcraft / image build caches
+.snapcraft/
 parts/
 prime/
 stage/
-.snapcraft/
-snap/.snapcraft/
-
-# Large binaries
-*.bin
-*.run
-
-# Secrets (do NOT commit)
-secrets.json
-**/secrets.json
-**/*_secret*
-**/*.key
-**/*.pem
-**/*.p12
+*.snap
+*.assert
+*.img
+*.iso

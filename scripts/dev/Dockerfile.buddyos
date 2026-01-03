@@ -1,0 +1,9 @@
+FROM docker.io/snapcore/snapcraft:stable
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+# (Most of what we need is already in this image: snapcraft, ubuntu-image, xorriso, qemu-img, etc.)
+# If we later discover one missing CLI, we add just that here.
+
+WORKDIR /workspace
+CMD ["bash"]

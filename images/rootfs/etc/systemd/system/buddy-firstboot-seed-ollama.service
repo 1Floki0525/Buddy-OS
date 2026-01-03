@@ -1,0 +1,16 @@
+[Unit]
+Description=Buddy-OS First Boot: Seed Ollama Default Model (qwen3-vl:2b)
+After=ollama.service
+Wants=ollama.service
+ConditionPathExists=/opt/buddy-os/seeds/ollama_seed_qwen3vl_2b_only.tar.gz
+ConditionPathExists=!/var/lib/buddy-os/firstboot_seed_ollama.done
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/firstboot_seed_ollama_qwen3vl2b.sh
+ExecStartPost=/bin/mkdir -p /var/lib/buddy-os
+ExecStartPost=/bin/touch /var/lib/buddy-os/firstboot_seed_ollama.done
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

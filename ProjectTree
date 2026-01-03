@@ -1,0 +1,59 @@
+.
+├── ABOUT.md
+├── assets
+├── broker
+│   ├── buddy_actionsd.py
+│   └── policy.json
+├── buddy
+│   ├── buddy_cli.py
+│   └── config
+│       ├── providers.example.json
+│       └── README.md
+├── build
+├── docs
+├── images
+├── notes
+│   └── DECISIONS.md
+├── README.md
+├── scripts
+│   ├── dev
+│   │   ├── allow_folder.sh
+│   │   ├── blacklist_folder.sh
+│   │   ├── build_buildhost.sh
+│   │   ├── Containerfile
+│   │   ├── demo.sh
+│   │   ├── Dockerfile.buddyos
+│   │   ├── Dockerfile.buildhost
+│   │   ├── entrypoint_snapd.sh
+│   │   ├── no_memory_folder.sh
+│   │   ├── policy_edit.py
+│   │   ├── reload_policy.sh
+│   │   ├── run_actionsd.sh
+│   │   ├── run_in_buildhost.sh
+│   │   ├── set_consent.sh
+│   │   ├── set_preset.sh
+│   │   ├── show_policy.sh
+│   │   ├── smoke_test_buildhost.sh
+│   │   └── tail_audit.sh
+│   ├── git_checkpoint.sh
+│   ├── git_set_remote.sh
+│   └── ollama_list_models.sh
+├── snaps
+│   └── buddy-core
+│       ├── bin
+│       │   ├── buddy-actionsd
+│       │   └── buddy-cli
+│       └── snap
+│           └── snapcraft.yaml
+├── specs
+│   ├── buddy_ai_settings.md
+│   ├── build.md
+│   ├── internal_api.md
+│   ├── permissions.md
+│   ├── providers.md
+│   ├── settings_storage.md
+│   ├── ui.md
+│   └── vault.md
+└── ui
+
+17 directories, 40 files

@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Buddy-OS CLI entrypoint inside the buddy-core snap
+
+export BUDDY_POLICY_PATH="${BUDDY_POLICY_PATH:-$SNAP/etc/buddy/policy.json}"
+
+exec /usr/bin/python3 "$SNAP/lib/buddy/buddy_cli.py" "$@"
