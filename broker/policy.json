@@ -1,0 +1,27 @@
+{
+  "access_preset": "restricted",
+  "allow_mode": "allowlist",
+  "allowlist": [
+    "/home/binary-god/Buddy-OS"
+  ],
+  "blacklist": [
+    "/home/binary-god/.ssh",
+    "/home/binary-god/.gnupg"
+  ],
+  "consent": {
+    "launch_app": "ask",
+    "list_dir": "allow",
+    "mkdir": "allow",
+    "open_url": "allow",
+    "shell": "deny",
+    "write_file": "ask"
+  },
+  "no_memory_zones": [
+    "/home/binary-god/.ssh",
+    "/home/binary-god/.gnupg"
+  ],
+  "re_auth_required": {
+    "shell": true
+  },
+  "version": "0.1"
+}
