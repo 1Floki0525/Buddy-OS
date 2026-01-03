@@ -54,61 +54,11 @@ Plan → Preview → Execute:
 OS Settings includes a dedicated section: Buddy AI
 No terminal. No text editing. All user configuration is GUI-only.
 
-Sections:
-
-A) Provider & Model
-- Provider dropdown:
-  - GPT-Neo (Local default baseline)
-  - Ollama (Local)
-  - Ollama (Cloud)
-  - OpenAI
-  - Google (Gemini)
-  - xAI (Grok)
-- Model dropdown:
-  - Populated dynamically based on provider
-  - Refresh button
-- Status:
-  - Connected / Not connected / Error
-- Buttons:
-  - Connect
-  - Disconnect
-  - Test connection
-
-B) Auth (Per Provider)
-- API key entry:
-  - masked input
-  - paste + verify
-- OAuth/login flow (where applicable):
-  - Connect opens browser to provider login
-  - returns to Buddy-OS
-- Secrets must be stored in OS secure storage (not plaintext files)
-
-C) Permissions
-- Presets:
-  - Restricted (default)
-  - Helpful
-  - Power User
-  - Admin
-- Consent matrix per category:
-  - Deny
-  - Ask every time
-  - Ask once per session
-  - Allow (where safe)
-- Re-auth controls:
-  - require PIN/password for high-risk operations
-
-D) Folder Access
-- Allowlist mode (only these folders)
-- Blacklist mode (everything except these folders)
-- No-memory zones:
-  - Buddy can act there but cannot retain content in long-term memory
-
-E) Memory & Privacy
-- Persistent memory toggle
-- Clear memory
-- Export diagnostics (redacted)
-- Audit log toggle (default ON)
-- Export audit log (redacted)
+Key rules:
+- Default local model: `ollama-local / qwen3-vl:2b` (works offline)
+- Only two active models at a time:
+  - Desktop Agent
+  - Dev Agent
 
 ## Accessibility
 - Full keyboard navigation for Buddy Bar and Drawer

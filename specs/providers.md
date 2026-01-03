@@ -3,42 +3,62 @@
 End-user rule: all provider setup is done in GUI under:
 OS Settings → Buddy AI
 
-No terminal, no config-file editing for users.
+No terminal. No config-file editing for end users.
+
+## Core Rules
+
+### Offline-first default
+Buddy-OS must work immediately after install with a bundled local model:
+- **Default bundled model:** `ollama-local / qwen3-vl:2b` (seeded into the Ollama local store)
+
+Users may keep the default forever without adding provider keys or logins.
+
+### Only 2 active models at a time
+Buddy uses exactly:
+- **Desktop Agent model** (everyday OS tasks)
+- **Dev Agent model** (coding/dev tasks)
+
+More models can be available, but only these two are “active”.
 
 ## Provider List
-- GPT-Neo (Local default baseline)
 - Ollama (Local)
 - Ollama (Cloud)
 - OpenAI
 - Google (Gemini)
+- Anthropic (Claude)
 - xAI (Grok)
 
 ## UI Requirements (Provider & Model)
-- Provider dropdown
-- Model dropdown (populated dynamically)
-- Refresh Models button
-- Test Connection button
-- Connect / Disconnect controls
+Each provider has its own section card in the Providers tab:
+
+- Enable checkbox (provider on/off)
 - Status indicator (Connected / Not connected / Error)
+- Connect/Disconnect controls:
+  - API key entry (masked) + Verify
+  - OAuth/browser login where applicable
+- Model dropdown (provider-specific; disabled until connected)
+- Refresh Models button
+- Test Connection button (optional but recommended)
 
 ## Model Listing Rules
 
 ### Ollama Local
-- If Ollama is reachable at `http://localhost:11434`:
+- If Ollama is reachable at `http://127.0.0.1:11434`:
   - list models using `GET /api/tags`
-- Model dropdown must reflect what the user already pulled locally.
+- Bundled seed model `qwen3-vl:2b` must appear by default.
 
 ### Ollama Cloud
-- When connected:
-  - list models using `GET https://ollama.com/api/tags`
+- When connected, list models via Ollama Cloud API (auth required).
 - If not connected:
   - show Connect button and disable cloud model dropdown.
+- Optional behavior (only if connected + permitted):
+  - On first coding request, Buddy may prompt to pull/select a recommended coder model.
 
-### OpenAI / Gemini / Grok
+### OpenAI / Gemini / Claude / Grok
 - When connected:
-  - list models via provider API.
-- If listing is not available for a provider:
-  - allow manual model entry as a fallback (GUI field).
+  - list models via provider API if supported.
+- If listing is not available:
+  - allow manual model entry as fallback (GUI field).
 
 ## Auth Rules (GUI Only)
 
@@ -48,42 +68,15 @@ No terminal, no config-file editing for users.
 - Disconnect removes key from secure storage.
 
 ### Browser Login Flow (OAuth-Style)
-- Connect opens a provider login page in the browser
-- On success, Buddy-OS receives token and stores it securely
+- Connect opens provider login in the browser
+- On success, Buddy-OS stores token securely
 - Disconnect revokes/removes token locally.
 
-### Ollama Cloud Connect
-Buddy AI Settings must support:
-- Web sign-in flow (Connect opens sign-in)
-- API key entry (optional alternative)
-
 ## Storage Rules
+- Non-secret settings go in normal settings storage.
+- Secrets (API keys/tokens) must go in OS secure storage and never in repo files.
 
-### Non-secret settings (OK to store in normal settings DB)
-- selected provider
-- selected model
-- provider base URLs (if user overrides)
-- feature toggles (offline-only, cost caps)
-- permission dial + consent matrix
-- folder allow/deny/no-memory lists
-
-### Secrets (MUST be stored in OS secure storage)
-- API keys
-- OAuth access/refresh tokens
-- session credentials
-
-Secrets must never be written into repo files.
-
-## Provider Switching Behavior
-- Switching provider must not change security model
-- Switching provider must not bypass:
-  - consent prompts
-  - folder restrictions
-  - no-memory zones
-  - audit logging
-
-## Offline Behavior
-- GPT-Neo local baseline must work without internet.
-- Ollama Local works without internet if models are already present.
-- Cloud providers must show clear offline/connection errors.
-
+## Distribution Rule (Important)
+Large seed artifacts must never be committed to git.
+- Repo stores: manifest + sha256
+- Seed tarballs are hosted externally (Google Drive) and fetched during build.

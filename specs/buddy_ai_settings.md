@@ -1,74 +1,46 @@
 # Buddy AI Settings (UI + Behavior Spec)
 
 ## Location
-OS Settings → **Buddy AI**
+OS Settings → Buddy AI
 
-## Sections
+## Core Concept
+Buddy-OS supports multiple providers, but Buddy only runs **two active models**:
+- Desktop Agent: everyday OS tasks
+- Dev Agent: coding/dev tasks
 
-### 1) Provider & Model
-- Provider dropdown:
-  - GPT-Neo (Default)
-  - Ollama Local
-  - Ollama Cloud
-  - OpenAI
-  - Google (Gemini)
-  - xAI (Grok)
-- Model dropdown:
-  - Auto-populate based on provider
-  - Refresh button
-- Connection status:
-  - Connected / Not Connected / Error
-- Buttons:
-  - Test connection
-  - Connect (provider-specific)
-  - Disconnect
+Default out-of-box:
+- Desktop Agent = `ollama-local / qwen3-vl:2b`
+- Dev Agent = `ollama-local / qwen3-vl:2b` (until user chooses otherwise)
 
-### 2) Consent Rules
-A matrix with categories:
-- Read files
-- Write files
-- Delete files
-- Run commands / scripts
-- Launch apps
-- Browser automation
-- Network requests (download/upload)
-- Email send / calendar actions
-- Credentials access
-- System/admin operations
+Users can keep defaults forever with no logins.
 
-Each category has:
-- Always ask
-- Ask once per session
-- Allow in allowlisted scope
-- Allow silently (only for low-risk categories)
+## Providers Tab
+Each provider has its own section:
+- Enable checkbox
+- Status pill: Connected / Not connected / Error
+- Auth controls:
+  - API key + Verify OR
+  - Login button (browser OAuth) where applicable
+- Model dropdown (provider-specific; disabled until connected)
+- Refresh models
 
-### 3) Folder Access Controls
-Three modes:
-- Allowlist: Buddy can touch ONLY these folders
-- Blacklist: Buddy can touch home EXCEPT these folders
-- Mixed: allowlist for write + broader read (optional future)
+Providers:
+- Ollama Local (includes bundled seed model `qwen3-vl:2b`)
+- Ollama Cloud
+- OpenAI
+- Gemini
+- Claude
+- Grok
 
-Plus:
-- No-memory zones:
-  - Buddy may access for tasks
-  - Buddy must not store embeddings/summaries/quotes to long-term memory
-  - Buddy must redact secrets from logs
+## Active Models Tab / Section
+Two selectors:
+- Desktop Agent (provider + model)
+- Dev Agent (provider + model)
 
-### 4) Memory & Privacy
-- Persistent memory:
-  - On/Off
-  - Clear memory
-  - Export memory
-- Audit log:
-  - On/Off (default ON)
-  - Verbosity level
-  - Export audit log
+Rules:
+- Exactly 2 active selections total (one for each agent).
+- Switching models/providers never bypasses permissions/consent/audit.
 
-### 5) Advanced
-- Custom base URLs per provider (for self-hosting)
-- Rate limits / cost caps (for cloud providers)
-- Offline-only mode toggle
-
-## UX Requirements
-- Any risky action must follow:
-  Plan → Preview → Execute → Summary + Audit Log
+## Consent Rules
+High-risk actions must follow:
+Plan → Preview → Execute → Summary + Audit Log

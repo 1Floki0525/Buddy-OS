@@ -1,6 +1,6 @@
 # Buddy-OS Internal API Spec (Dev)
 
-This is an internal dev contract between Buddy (agent) and the local execution layer.
+Internal contract between Buddy (agent/UI) and the local execution layer.
 
 Transport:
 - Local HTTP on 127.0.0.1
@@ -15,9 +15,30 @@ GET /health
 Response:
 - 200 {"ok":true,"service":"buddy-actions","version":"0.1"}
 
+GET /providers/status
+Response:
+- 200 {
+  "ok": true,
+  "timestamp": "...",
+  "providers": {
+    "ollama-local": {
+      "enabled": true,
+      "connected": true,
+      "reachable": true,
+      "error": "",
+      "models": ["qwen3-vl:2b"]
+    }
+  }
+}
+
 GET /providers/ollama-local/models
 Response:
-- 200 {"ok":true,"provider":"ollama-local","models":["qwen2.5-coder:7b", "..."]}
+- 200 {
+  "ok": true,
+  "provider": "ollama-local",
+  "models": ["qwen3-vl:2b"],
+  "models_info": [ ... ]
+}
 
 POST /execute
 Request:

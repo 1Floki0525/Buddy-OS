@@ -1,0 +1,1349 @@
+ls: cannot access '/home/binary-god/Buddy-OS/build/iso_work/squashfs-root/opt/buddy-os/seeds/': No such file or directory
+binary-god@pop-os:~/Buddy-OS$ tree
+.
+├── ABOUT.md
+├── assets
+│   └── ollama-seeds
+│       ├── ollama_seed_qwen3vl_2b_only.tar.gz
+│       └── ollama_seed_qwen3vl_2b_only.tar.gz.sha256
+├── broker
+│   ├── buddy_actionsd.py
+│   └── policy.json
+├── buddy
+│   ├── buddy_cli.py
+│   └── config
+│       ├── providers.example.json
+│       └── README.md
+├── build
+│   ├── iso_cache
+│   │   └── ubuntu-24.04.3-desktop-amd64.iso
+│   ├── iso_work
+│   │   └── iso
+│   │       ├── boot
+│   │       │   ├── grub
+│   │       │   │   ├── fonts
+│   │       │   │   │   └── unicode.pf2
+│   │       │   │   ├── grub.cfg
+│   │       │   │   ├── i386-pc
+│   │       │   │   │   ├── 915resolution.mod
+│   │       │   │   │   ├── acpi.mod
+│   │       │   │   │   ├── adler32.mod
+│   │       │   │   │   ├── affs.mod
+│   │       │   │   │   ├── afs.mod
+│   │       │   │   │   ├── afsplitter.mod
+│   │       │   │   │   ├── ahci.mod
+│   │       │   │   │   ├── all_video.mod
+│   │       │   │   │   ├── aout.mod
+│   │       │   │   │   ├── archelp.mod
+│   │       │   │   │   ├── ata.mod
+│   │       │   │   │   ├── at_keyboard.mod
+│   │       │   │   │   ├── backtrace.mod
+│   │       │   │   │   ├── bfs.mod
+│   │       │   │   │   ├── biosdisk.mod
+│   │       │   │   │   ├── bitmap.mod
+│   │       │   │   │   ├── bitmap_scale.mod
+│   │       │   │   │   ├── blocklist.mod
+│   │       │   │   │   ├── boot.mod
+│   │       │   │   │   ├── bsd.mod
+│   │       │   │   │   ├── bswap_test.mod
+│   │       │   │   │   ├── btrfs.mod
+│   │       │   │   │   ├── bufio.mod
+│   │       │   │   │   ├── cat.mod
+│   │       │   │   │   ├── cbfs.mod
+│   │       │   │   │   ├── cbls.mod
+│   │       │   │   │   ├── cbmemc.mod
+│   │       │   │   │   ├── cbtable.mod
+│   │       │   │   │   ├── cbtime.mod
+│   │       │   │   │   ├── chain.mod
+│   │       │   │   │   ├── cmdline_cat_test.mod
+│   │       │   │   │   ├── cmosdump.mod
+│   │       │   │   │   ├── cmostest.mod
+│   │       │   │   │   ├── cmp.mod
+│   │       │   │   │   ├── cmp_test.mod
+│   │       │   │   │   ├── command.lst
+│   │       │   │   │   ├── configfile.mod
+│   │       │   │   │   ├── cpio_be.mod
+│   │       │   │   │   ├── cpio.mod
+│   │       │   │   │   ├── cpuid.mod
+│   │       │   │   │   ├── crc64.mod
+│   │       │   │   │   ├── cryptodisk.mod
+│   │       │   │   │   ├── crypto.lst
+│   │       │   │   │   ├── crypto.mod
+│   │       │   │   │   ├── cs5536.mod
+│   │       │   │   │   ├── ctz_test.mod
+│   │       │   │   │   ├── datehook.mod
+│   │       │   │   │   ├── date.mod
+│   │       │   │   │   ├── datetime.mod
+│   │       │   │   │   ├── diskfilter.mod
+│   │       │   │   │   ├── disk.mod
+│   │       │   │   │   ├── div.mod
+│   │       │   │   │   ├── div_test.mod
+│   │       │   │   │   ├── dm_nv.mod
+│   │       │   │   │   ├── drivemap.mod
+│   │       │   │   │   ├── echo.mod
+│   │       │   │   │   ├── efiemu32.o
+│   │       │   │   │   ├── efiemu64.o
+│   │       │   │   │   ├── efiemu.mod
+│   │       │   │   │   ├── ehci.mod
+│   │       │   │   │   ├── elf.mod
+│   │       │   │   │   ├── eltorito.img
+│   │       │   │   │   ├── eval.mod
+│   │       │   │   │   ├── exfat.mod
+│   │       │   │   │   ├── exfctest.mod
+│   │       │   │   │   ├── ext2.mod
+│   │       │   │   │   ├── extcmd.mod
+│   │       │   │   │   ├── f2fs.mod
+│   │       │   │   │   ├── fat.mod
+│   │       │   │   │   ├── fdt.lst
+│   │       │   │   │   ├── file.mod
+│   │       │   │   │   ├── font.mod
+│   │       │   │   │   ├── freedos.mod
+│   │       │   │   │   ├── fshelp.mod
+│   │       │   │   │   ├── fs.lst
+│   │       │   │   │   ├── functional_test.mod
+│   │       │   │   │   ├── gcry_arcfour.mod
+│   │       │   │   │   ├── gcry_blowfish.mod
+│   │       │   │   │   ├── gcry_camellia.mod
+│   │       │   │   │   ├── gcry_cast5.mod
+│   │       │   │   │   ├── gcry_crc.mod
+│   │       │   │   │   ├── gcry_des.mod
+│   │       │   │   │   ├── gcry_dsa.mod
+│   │       │   │   │   ├── gcry_idea.mod
+│   │       │   │   │   ├── gcry_md4.mod
+│   │       │   │   │   ├── gcry_md5.mod
+│   │       │   │   │   ├── gcry_rfc2268.mod
+│   │       │   │   │   ├── gcry_rijndael.mod
+│   │       │   │   │   ├── gcry_rmd160.mod
+│   │       │   │   │   ├── gcry_rsa.mod
+│   │       │   │   │   ├── gcry_seed.mod
+│   │       │   │   │   ├── gcry_serpent.mod
+│   │       │   │   │   ├── gcry_sha1.mod
+│   │       │   │   │   ├── gcry_sha256.mod
+│   │       │   │   │   ├── gcry_sha512.mod
+│   │       │   │   │   ├── gcry_tiger.mod
+│   │       │   │   │   ├── gcry_twofish.mod
+│   │       │   │   │   ├── gcry_whirlpool.mod
+│   │       │   │   │   ├── gdb.mod
+│   │       │   │   │   ├── geli.mod
+│   │       │   │   │   ├── gettext.mod
+│   │       │   │   │   ├── gfxmenu.mod
+│   │       │   │   │   ├── gfxterm_background.mod
+│   │       │   │   │   ├── gfxterm_menu.mod
+│   │       │   │   │   ├── gfxterm.mod
+│   │       │   │   │   ├── gptsync.mod
+│   │       │   │   │   ├── gzio.mod
+│   │       │   │   │   ├── halt.mod
+│   │       │   │   │   ├── hashsum.mod
+│   │       │   │   │   ├── hdparm.mod
+│   │       │   │   │   ├── hello.mod
+│   │       │   │   │   ├── help.mod
+│   │       │   │   │   ├── hexdump.mod
+│   │       │   │   │   ├── hfs.mod
+│   │       │   │   │   ├── hfspluscomp.mod
+│   │       │   │   │   ├── hfsplus.mod
+│   │       │   │   │   ├── http.mod
+│   │       │   │   │   ├── hwmatch.mod
+│   │       │   │   │   ├── iorw.mod
+│   │       │   │   │   ├── iso9660.mod
+│   │       │   │   │   ├── jfs.mod
+│   │       │   │   │   ├── jpeg.mod
+│   │       │   │   │   ├── json.mod
+│   │       │   │   │   ├── keylayouts.mod
+│   │       │   │   │   ├── keystatus.mod
+│   │       │   │   │   ├── ldm.mod
+│   │       │   │   │   ├── legacycfg.mod
+│   │       │   │   │   ├── legacy_password_test.mod
+│   │       │   │   │   ├── linux16.mod
+│   │       │   │   │   ├── linux.mod
+│   │       │   │   │   ├── loadenv.mod
+│   │       │   │   │   ├── loopback.mod
+│   │       │   │   │   ├── lsacpi.mod
+│   │       │   │   │   ├── lsapm.mod
+│   │       │   │   │   ├── lsmmap.mod
+│   │       │   │   │   ├── ls.mod
+│   │       │   │   │   ├── lspci.mod
+│   │       │   │   │   ├── luks2.mod
+│   │       │   │   │   ├── luks.mod
+│   │       │   │   │   ├── lvm.mod
+│   │       │   │   │   ├── lzopio.mod
+│   │       │   │   │   ├── macbless.mod
+│   │       │   │   │   ├── macho.mod
+│   │       │   │   │   ├── mda_text.mod
+│   │       │   │   │   ├── mdraid09_be.mod
+│   │       │   │   │   ├── mdraid09.mod
+│   │       │   │   │   ├── mdraid1x.mod
+│   │       │   │   │   ├── memdisk.mod
+│   │       │   │   │   ├── memrw.mod
+│   │       │   │   │   ├── minicmd.mod
+│   │       │   │   │   ├── minix2_be.mod
+│   │       │   │   │   ├── minix2.mod
+│   │       │   │   │   ├── minix3_be.mod
+│   │       │   │   │   ├── minix3.mod
+│   │       │   │   │   ├── minix_be.mod
+│   │       │   │   │   ├── minix.mod
+│   │       │   │   │   ├── mmap.mod
+│   │       │   │   │   ├── moddep.lst
+│   │       │   │   │   ├── morse.mod
+│   │       │   │   │   ├── mpi.mod
+│   │       │   │   │   ├── msdospart.mod
+│   │       │   │   │   ├── mul_test.mod
+│   │       │   │   │   ├── multiboot2.mod
+│   │       │   │   │   ├── multiboot.mod
+│   │       │   │   │   ├── nativedisk.mod
+│   │       │   │   │   ├── net.mod
+│   │       │   │   │   ├── newc.mod
+│   │       │   │   │   ├── nilfs2.mod
+│   │       │   │   │   ├── normal.mod
+│   │       │   │   │   ├── ntfscomp.mod
+│   │       │   │   │   ├── ntfs.mod
+│   │       │   │   │   ├── ntldr.mod
+│   │       │   │   │   ├── odc.mod
+│   │       │   │   │   ├── offsetio.mod
+│   │       │   │   │   ├── ohci.mod
+│   │       │   │   │   ├── part_acorn.mod
+│   │       │   │   │   ├── part_amiga.mod
+│   │       │   │   │   ├── part_apple.mod
+│   │       │   │   │   ├── part_bsd.mod
+│   │       │   │   │   ├── part_dfly.mod
+│   │       │   │   │   ├── part_dvh.mod
+│   │       │   │   │   ├── part_gpt.mod
+│   │       │   │   │   ├── partmap.lst
+│   │       │   │   │   ├── part_msdos.mod
+│   │       │   │   │   ├── part_plan.mod
+│   │       │   │   │   ├── part_sun.mod
+│   │       │   │   │   ├── part_sunpc.mod
+│   │       │   │   │   ├── parttool.lst
+│   │       │   │   │   ├── parttool.mod
+│   │       │   │   │   ├── password.mod
+│   │       │   │   │   ├── password_pbkdf2.mod
+│   │       │   │   │   ├── pata.mod
+│   │       │   │   │   ├── pbkdf2.mod
+│   │       │   │   │   ├── pbkdf2_test.mod
+│   │       │   │   │   ├── pcidump.mod
+│   │       │   │   │   ├── pci.mod
+│   │       │   │   │   ├── pgp.mod
+│   │       │   │   │   ├── plainmount.mod
+│   │       │   │   │   ├── plan9.mod
+│   │       │   │   │   ├── play.mod
+│   │       │   │   │   ├── png.mod
+│   │       │   │   │   ├── priority_queue.mod
+│   │       │   │   │   ├── probe.mod
+│   │       │   │   │   ├── procfs.mod
+│   │       │   │   │   ├── progress.mod
+│   │       │   │   │   ├── pxechain.mod
+│   │       │   │   │   ├── pxe.mod
+│   │       │   │   │   ├── raid5rec.mod
+│   │       │   │   │   ├── raid6rec.mod
+│   │       │   │   │   ├── random.mod
+│   │       │   │   │   ├── rdmsr.mod
+│   │       │   │   │   ├── read.mod
+│   │       │   │   │   ├── reboot.mod
+│   │       │   │   │   ├── regexp.mod
+│   │       │   │   │   ├── reiserfs.mod
+│   │       │   │   │   ├── relocator.mod
+│   │       │   │   │   ├── romfs.mod
+│   │       │   │   │   ├── scsi.mod
+│   │       │   │   │   ├── search_fs_file.mod
+│   │       │   │   │   ├── search_fs_uuid.mod
+│   │       │   │   │   ├── search_label.mod
+│   │       │   │   │   ├── search.mod
+│   │       │   │   │   ├── sendkey.mod
+│   │       │   │   │   ├── serial.mod
+│   │       │   │   │   ├── setjmp.mod
+│   │       │   │   │   ├── setjmp_test.mod
+│   │       │   │   │   ├── setpci.mod
+│   │       │   │   │   ├── sfs.mod
+│   │       │   │   │   ├── shift_test.mod
+│   │       │   │   │   ├── signature_test.mod
+│   │       │   │   │   ├── sleep.mod
+│   │       │   │   │   ├── sleep_test.mod
+│   │       │   │   │   ├── smbios.mod
+│   │       │   │   │   ├── spkmodem.mod
+│   │       │   │   │   ├── squash4.mod
+│   │       │   │   │   ├── strtoull_test.mod
+│   │       │   │   │   ├── syslinuxcfg.mod
+│   │       │   │   │   ├── tar.mod
+│   │       │   │   │   ├── terminal.lst
+│   │       │   │   │   ├── terminal.mod
+│   │       │   │   │   ├── terminfo.mod
+│   │       │   │   │   ├── test_blockarg.mod
+│   │       │   │   │   ├── testload.mod
+│   │       │   │   │   ├── test.mod
+│   │       │   │   │   ├── testspeed.mod
+│   │       │   │   │   ├── tftp.mod
+│   │       │   │   │   ├── tga.mod
+│   │       │   │   │   ├── time.mod
+│   │       │   │   │   ├── trig.mod
+│   │       │   │   │   ├── tr.mod
+│   │       │   │   │   ├── truecrypt.mod
+│   │       │   │   │   ├── true.mod
+│   │       │   │   │   ├── udf.mod
+│   │       │   │   │   ├── ufs1_be.mod
+│   │       │   │   │   ├── ufs1.mod
+│   │       │   │   │   ├── ufs2.mod
+│   │       │   │   │   ├── uhci.mod
+│   │       │   │   │   ├── usb_keyboard.mod
+│   │       │   │   │   ├── usb.mod
+│   │       │   │   │   ├── usbms.mod
+│   │       │   │   │   ├── usbserial_common.mod
+│   │       │   │   │   ├── usbserial_ftdi.mod
+│   │       │   │   │   ├── usbserial_pl2303.mod
+│   │       │   │   │   ├── usbserial_usbdebug.mod
+│   │       │   │   │   ├── usbtest.mod
+│   │       │   │   │   ├── vbe.mod
+│   │       │   │   │   ├── verifiers.mod
+│   │       │   │   │   ├── vga.mod
+│   │       │   │   │   ├── vga_text.mod
+│   │       │   │   │   ├── video_bochs.mod
+│   │       │   │   │   ├── video_cirrus.mod
+│   │       │   │   │   ├── video_colors.mod
+│   │       │   │   │   ├── video_fb.mod
+│   │       │   │   │   ├── videoinfo.mod
+│   │       │   │   │   ├── video.lst
+│   │       │   │   │   ├── video.mod
+│   │       │   │   │   ├── videotest_checksum.mod
+│   │       │   │   │   ├── videotest.mod
+│   │       │   │   │   ├── wrmsr.mod
+│   │       │   │   │   ├── xfs.mod
+│   │       │   │   │   ├── xnu.mod
+│   │       │   │   │   ├── xnu_uuid.mod
+│   │       │   │   │   ├── xnu_uuid_test.mod
+│   │       │   │   │   ├── xzio.mod
+│   │       │   │   │   ├── zfscrypt.mod
+│   │       │   │   │   ├── zfsinfo.mod
+│   │       │   │   │   ├── zfs.mod
+│   │       │   │   │   └── zstd.mod
+│   │       │   │   ├── loopback.cfg
+│   │       │   │   └── x86_64-efi
+│   │       │   │       ├── acpi.mod
+│   │       │   │       ├── adler32.mod
+│   │       │   │       ├── affs.mod
+│   │       │   │       ├── afs.mod
+│   │       │   │       ├── afsplitter.mod
+│   │       │   │       ├── ahci.mod
+│   │       │   │       ├── all_video.mod
+│   │       │   │       ├── aout.mod
+│   │       │   │       ├── appleldr.mod
+│   │       │   │       ├── archelp.mod
+│   │       │   │       ├── ata.mod
+│   │       │   │       ├── at_keyboard.mod
+│   │       │   │       ├── backtrace.mod
+│   │       │   │       ├── bfs.mod
+│   │       │   │       ├── bitmap.mod
+│   │       │   │       ├── bitmap_scale.mod
+│   │       │   │       ├── bli.mod
+│   │       │   │       ├── blocklist.mod
+│   │       │   │       ├── boot.mod
+│   │       │   │       ├── bsd.mod
+│   │       │   │       ├── bswap_test.mod
+│   │       │   │       ├── btrfs.mod
+│   │       │   │       ├── bufio.mod
+│   │       │   │       ├── cat.mod
+│   │       │   │       ├── cbfs.mod
+│   │       │   │       ├── cbls.mod
+│   │       │   │       ├── cbmemc.mod
+│   │       │   │       ├── cbtable.mod
+│   │       │   │       ├── cbtime.mod
+│   │       │   │       ├── chain.mod
+│   │       │   │       ├── cmdline_cat_test.mod
+│   │       │   │       ├── cmp.mod
+│   │       │   │       ├── cmp_test.mod
+│   │       │   │       ├── command.lst
+│   │       │   │       ├── configfile.mod
+│   │       │   │       ├── cpio_be.mod
+│   │       │   │       ├── cpio.mod
+│   │       │   │       ├── cpuid.mod
+│   │       │   │       ├── crc64.mod
+│   │       │   │       ├── cryptodisk.mod
+│   │       │   │       ├── crypto.lst
+│   │       │   │       ├── crypto.mod
+│   │       │   │       ├── cs5536.mod
+│   │       │   │       ├── ctz_test.mod
+│   │       │   │       ├── datehook.mod
+│   │       │   │       ├── date.mod
+│   │       │   │       ├── datetime.mod
+│   │       │   │       ├── diskfilter.mod
+│   │       │   │       ├── disk.mod
+│   │       │   │       ├── div.mod
+│   │       │   │       ├── div_test.mod
+│   │       │   │       ├── dm_nv.mod
+│   │       │   │       ├── echo.mod
+│   │       │   │       ├── efifwsetup.mod
+│   │       │   │       ├── efi_gop.mod
+│   │       │   │       ├── efinet.mod
+│   │       │   │       ├── efitextmode.mod
+│   │       │   │       ├── efi_uga.mod
+│   │       │   │       ├── ehci.mod
+│   │       │   │       ├── elf.mod
+│   │       │   │       ├── eval.mod
+│   │       │   │       ├── exfat.mod
+│   │       │   │       ├── exfctest.mod
+│   │       │   │       ├── ext2.mod
+│   │       │   │       ├── extcmd.mod
+│   │       │   │       ├── f2fs.mod
+│   │       │   │       ├── fat.mod
+│   │       │   │       ├── fdt.lst
+│   │       │   │       ├── file.mod
+│   │       │   │       ├── fixvideo.mod
+│   │       │   │       ├── font.mod
+│   │       │   │       ├── fshelp.mod
+│   │       │   │       ├── fs.lst
+│   │       │   │       ├── functional_test.mod
+│   │       │   │       ├── gcry_arcfour.mod
+│   │       │   │       ├── gcry_blowfish.mod
+│   │       │   │       ├── gcry_camellia.mod
+│   │       │   │       ├── gcry_cast5.mod
+│   │       │   │       ├── gcry_crc.mod
+│   │       │   │       ├── gcry_des.mod
+│   │       │   │       ├── gcry_dsa.mod
+│   │       │   │       ├── gcry_idea.mod
+│   │       │   │       ├── gcry_md4.mod
+│   │       │   │       ├── gcry_md5.mod
+│   │       │   │       ├── gcry_rfc2268.mod
+│   │       │   │       ├── gcry_rijndael.mod
+│   │       │   │       ├── gcry_rmd160.mod
+│   │       │   │       ├── gcry_rsa.mod
+│   │       │   │       ├── gcry_seed.mod
+│   │       │   │       ├── gcry_serpent.mod
+│   │       │   │       ├── gcry_sha1.mod
+│   │       │   │       ├── gcry_sha256.mod
+│   │       │   │       ├── gcry_sha512.mod
+│   │       │   │       ├── gcry_tiger.mod
+│   │       │   │       ├── gcry_twofish.mod
+│   │       │   │       ├── gcry_whirlpool.mod
+│   │       │   │       ├── geli.mod
+│   │       │   │       ├── gettext.mod
+│   │       │   │       ├── gfxmenu.mod
+│   │       │   │       ├── gfxterm_background.mod
+│   │       │   │       ├── gfxterm_menu.mod
+│   │       │   │       ├── gfxterm.mod
+│   │       │   │       ├── gptsync.mod
+│   │       │   │       ├── gzio.mod
+│   │       │   │       ├── halt.mod
+│   │       │   │       ├── hashsum.mod
+│   │       │   │       ├── hdparm.mod
+│   │       │   │       ├── hello.mod
+│   │       │   │       ├── help.mod
+│   │       │   │       ├── hexdump.mod
+│   │       │   │       ├── hfs.mod
+│   │       │   │       ├── hfspluscomp.mod
+│   │       │   │       ├── hfsplus.mod
+│   │       │   │       ├── http.mod
+│   │       │   │       ├── iorw.mod
+│   │       │   │       ├── iso9660.mod
+│   │       │   │       ├── jfs.mod
+│   │       │   │       ├── jpeg.mod
+│   │       │   │       ├── json.mod
+│   │       │   │       ├── keylayouts.mod
+│   │       │   │       ├── keystatus.mod
+│   │       │   │       ├── ldm.mod
+│   │       │   │       ├── legacycfg.mod
+│   │       │   │       ├── legacy_password_test.mod
+│   │       │   │       ├── linux16.mod
+│   │       │   │       ├── linux.mod
+│   │       │   │       ├── loadbios.mod
+│   │       │   │       ├── loadenv.mod
+│   │       │   │       ├── loopback.mod
+│   │       │   │       ├── lsacpi.mod
+│   │       │   │       ├── lsefimmap.mod
+│   │       │   │       ├── lsefi.mod
+│   │       │   │       ├── lsefisystab.mod
+│   │       │   │       ├── lsmmap.mod
+│   │       │   │       ├── ls.mod
+│   │       │   │       ├── lspci.mod
+│   │       │   │       ├── lssal.mod
+│   │       │   │       ├── luks2.mod
+│   │       │   │       ├── luks.mod
+│   │       │   │       ├── lvm.mod
+│   │       │   │       ├── lzopio.mod
+│   │       │   │       ├── macbless.mod
+│   │       │   │       ├── macho.mod
+│   │       │   │       ├── mdraid09_be.mod
+│   │       │   │       ├── mdraid09.mod
+│   │       │   │       ├── mdraid1x.mod
+│   │       │   │       ├── memdisk.mod
+│   │       │   │       ├── memrw.mod
+│   │       │   │       ├── minicmd.mod
+│   │       │   │       ├── minix2_be.mod
+│   │       │   │       ├── minix2.mod
+│   │       │   │       ├── minix3_be.mod
+│   │       │   │       ├── minix3.mod
+│   │       │   │       ├── minix_be.mod
+│   │       │   │       ├── minix.mod
+│   │       │   │       ├── mmap.mod
+│   │       │   │       ├── moddep.lst
+│   │       │   │       ├── morse.mod
+│   │       │   │       ├── mpi.mod
+│   │       │   │       ├── msdospart.mod
+│   │       │   │       ├── mul_test.mod
+│   │       │   │       ├── multiboot2.mod
+│   │       │   │       ├── multiboot.mod
+│   │       │   │       ├── nativedisk.mod
+│   │       │   │       ├── net.mod
+│   │       │   │       ├── newc.mod
+│   │       │   │       ├── nilfs2.mod
+│   │       │   │       ├── normal.mod
+│   │       │   │       ├── ntfscomp.mod
+│   │       │   │       ├── ntfs.mod
+│   │       │   │       ├── odc.mod
+│   │       │   │       ├── offsetio.mod
+│   │       │   │       ├── ohci.mod
+│   │       │   │       ├── part_acorn.mod
+│   │       │   │       ├── part_amiga.mod
+│   │       │   │       ├── part_apple.mod
+│   │       │   │       ├── part_bsd.mod
+│   │       │   │       ├── part_dfly.mod
+│   │       │   │       ├── part_dvh.mod
+│   │       │   │       ├── part_gpt.mod
+│   │       │   │       ├── partmap.lst
+│   │       │   │       ├── part_msdos.mod
+│   │       │   │       ├── part_plan.mod
+│   │       │   │       ├── part_sun.mod
+│   │       │   │       ├── part_sunpc.mod
+│   │       │   │       ├── parttool.lst
+│   │       │   │       ├── parttool.mod
+│   │       │   │       ├── password.mod
+│   │       │   │       ├── password_pbkdf2.mod
+│   │       │   │       ├── pata.mod
+│   │       │   │       ├── pbkdf2.mod
+│   │       │   │       ├── pbkdf2_test.mod
+│   │       │   │       ├── pcidump.mod
+│   │       │   │       ├── peimage.mod
+│   │       │   │       ├── pgp.mod
+│   │       │   │       ├── plainmount.mod
+│   │       │   │       ├── play.mod
+│   │       │   │       ├── png.mod
+│   │       │   │       ├── priority_queue.mod
+│   │       │   │       ├── probe.mod
+│   │       │   │       ├── procfs.mod
+│   │       │   │       ├── progress.mod
+│   │       │   │       ├── raid5rec.mod
+│   │       │   │       ├── raid6rec.mod
+│   │       │   │       ├── random.mod
+│   │       │   │       ├── rdmsr.mod
+│   │       │   │       ├── read.mod
+│   │       │   │       ├── reboot.mod
+│   │       │   │       ├── regexp.mod
+│   │       │   │       ├── reiserfs.mod
+│   │       │   │       ├── relocator.mod
+│   │       │   │       ├── romfs.mod
+│   │       │   │       ├── scsi.mod
+│   │       │   │       ├── search_fs_file.mod
+│   │       │   │       ├── search_fs_uuid.mod
+│   │       │   │       ├── search_label.mod
+│   │       │   │       ├── search.mod
+│   │       │   │       ├── serial.mod
+│   │       │   │       ├── setjmp.mod
+│   │       │   │       ├── setjmp_test.mod
+│   │       │   │       ├── setpci.mod
+│   │       │   │       ├── sfs.mod
+│   │       │   │       ├── shift_test.mod
+│   │       │   │       ├── signature_test.mod
+│   │       │   │       ├── sleep.mod
+│   │       │   │       ├── sleep_test.mod
+│   │       │   │       ├── smbios.mod
+│   │       │   │       ├── spkmodem.mod
+│   │       │   │       ├── squash4.mod
+│   │       │   │       ├── strtoull_test.mod
+│   │       │   │       ├── syslinuxcfg.mod
+│   │       │   │       ├── tar.mod
+│   │       │   │       ├── terminal.lst
+│   │       │   │       ├── terminal.mod
+│   │       │   │       ├── terminfo.mod
+│   │       │   │       ├── test_blockarg.mod
+│   │       │   │       ├── testload.mod
+│   │       │   │       ├── test.mod
+│   │       │   │       ├── testspeed.mod
+│   │       │   │       ├── tftp.mod
+│   │       │   │       ├── tga.mod
+│   │       │   │       ├── time.mod
+│   │       │   │       ├── tpm.mod
+│   │       │   │       ├── trig.mod
+│   │       │   │       ├── tr.mod
+│   │       │   │       ├── true.mod
+│   │       │   │       ├── udf.mod
+│   │       │   │       ├── ufs1_be.mod
+│   │       │   │       ├── ufs1.mod
+│   │       │   │       ├── ufs2.mod
+│   │       │   │       ├── uhci.mod
+│   │       │   │       ├── usb_keyboard.mod
+│   │       │   │       ├── usb.mod
+│   │       │   │       ├── usbms.mod
+│   │       │   │       ├── usbserial_common.mod
+│   │       │   │       ├── usbserial_ftdi.mod
+│   │       │   │       ├── usbserial_pl2303.mod
+│   │       │   │       ├── usbserial_usbdebug.mod
+│   │       │   │       ├── usbtest.mod
+│   │       │   │       ├── video_bochs.mod
+│   │       │   │       ├── video_cirrus.mod
+│   │       │   │       ├── video_colors.mod
+│   │       │   │       ├── video_fb.mod
+│   │       │   │       ├── videoinfo.mod
+│   │       │   │       ├── video.lst
+│   │       │   │       ├── video.mod
+│   │       │   │       ├── videotest_checksum.mod
+│   │       │   │       ├── videotest.mod
+│   │       │   │       ├── wrmsr.mod
+│   │       │   │       ├── xfs.mod
+│   │       │   │       ├── xnu.mod
+│   │       │   │       ├── xnu_uuid.mod
+│   │       │   │       ├── xnu_uuid_test.mod
+│   │       │   │       ├── xzio.mod
+│   │       │   │       ├── zfscrypt.mod
+│   │       │   │       ├── zfsinfo.mod
+│   │       │   │       ├── zfs.mod
+│   │       │   │       └── zstd.mod
+│   │       │   └── memtest86+x64.bin
+│   │       ├── boot.catalog
+│   │       ├── casper
+│   │       │   ├── filesystem.manifest
+│   │       │   ├── filesystem.size
+│   │       │   ├── initrd
+│   │       │   ├── install-sources.yaml
+│   │       │   ├── minimal.de.manifest
+│   │       │   ├── minimal.de.size
+│   │       │   ├── minimal.de.squashfs
+│   │       │   ├── minimal.de.squashfs.gpg
+│   │       │   ├── minimal.enhanced-secureboot.de.manifest
+│   │       │   ├── minimal.enhanced-secureboot.de.size
+│   │       │   ├── minimal.enhanced-secureboot.de.squashfs
+│   │       │   ├── minimal.enhanced-secureboot.de.squashfs.gpg
+│   │       │   ├── minimal.enhanced-secureboot.en.manifest
+│   │       │   ├── minimal.enhanced-secureboot.en.size
+│   │       │   ├── minimal.enhanced-secureboot.en.squashfs
+│   │       │   ├── minimal.enhanced-secureboot.en.squashfs.gpg
+│   │       │   ├── minimal.enhanced-secureboot.es.manifest
+│   │       │   ├── minimal.enhanced-secureboot.es.size
+│   │       │   ├── minimal.enhanced-secureboot.es.squashfs
+│   │       │   ├── minimal.enhanced-secureboot.es.squashfs.gpg
+│   │       │   ├── minimal.enhanced-secureboot.fr.manifest
+│   │       │   ├── minimal.enhanced-secureboot.fr.size
+│   │       │   ├── minimal.enhanced-secureboot.fr.squashfs
+│   │       │   ├── minimal.enhanced-secureboot.fr.squashfs.gpg
+│   │       │   ├── minimal.enhanced-secureboot.it.manifest
+│   │       │   ├── minimal.enhanced-secureboot.it.size
+│   │       │   ├── minimal.enhanced-secureboot.it.squashfs
+│   │       │   ├── minimal.enhanced-secureboot.it.squashfs.gpg
+│   │       │   ├── minimal.enhanced-secureboot.manifest
+│   │       │   ├── minimal.enhanced-secureboot.no-languages.manifest
+│   │       │   ├── minimal.enhanced-secureboot.no-languages.size
+│   │       │   ├── minimal.enhanced-secureboot.no-languages.squashfs
+│   │       │   ├── minimal.enhanced-secureboot.no-languages.squashfs.gpg
+│   │       │   ├── minimal.enhanced-secureboot.pt.manifest
+│   │       │   ├── minimal.enhanced-secureboot.pt.size
+│   │       │   ├── minimal.enhanced-secureboot.pt.squashfs
+│   │       │   ├── minimal.enhanced-secureboot.pt.squashfs.gpg
+│   │       │   ├── minimal.enhanced-secureboot.ru.manifest
+│   │       │   ├── minimal.enhanced-secureboot.ru.size
+│   │       │   ├── minimal.enhanced-secureboot.ru.squashfs
+│   │       │   ├── minimal.enhanced-secureboot.ru.squashfs.gpg
+│   │       │   ├── minimal.enhanced-secureboot.size
+│   │       │   ├── minimal.enhanced-secureboot.squashfs
+│   │       │   ├── minimal.enhanced-secureboot.squashfs.gpg
+│   │       │   ├── minimal.enhanced-secureboot.zh.manifest
+│   │       │   ├── minimal.enhanced-secureboot.zh.size
+│   │       │   ├── minimal.enhanced-secureboot.zh.squashfs
+│   │       │   ├── minimal.enhanced-secureboot.zh.squashfs.gpg
+│   │       │   ├── minimal.en.manifest
+│   │       │   ├── minimal.en.size
+│   │       │   ├── minimal.en.squashfs
+│   │       │   ├── minimal.en.squashfs.gpg
+│   │       │   ├── minimal.es.manifest
+│   │       │   ├── minimal.es.size
+│   │       │   ├── minimal.es.squashfs
+│   │       │   ├── minimal.es.squashfs.gpg
+│   │       │   ├── minimal.fr.manifest
+│   │       │   ├── minimal.fr.size
+│   │       │   ├── minimal.fr.squashfs
+│   │       │   ├── minimal.fr.squashfs.gpg
+│   │       │   ├── minimal.it.manifest
+│   │       │   ├── minimal.it.size
+│   │       │   ├── minimal.it.squashfs
+│   │       │   ├── minimal.it.squashfs.gpg
+│   │       │   ├── minimal.manifest
+│   │       │   ├── minimal.no-languages.manifest
+│   │       │   ├── minimal.no-languages.size
+│   │       │   ├── minimal.no-languages.squashfs
+│   │       │   ├── minimal.no-languages.squashfs.gpg
+│   │       │   ├── minimal.pt.manifest
+│   │       │   ├── minimal.pt.size
+│   │       │   ├── minimal.pt.squashfs
+│   │       │   ├── minimal.pt.squashfs.gpg
+│   │       │   ├── minimal.ru.manifest
+│   │       │   ├── minimal.ru.size
+│   │       │   ├── minimal.ru.squashfs
+│   │       │   ├── minimal.ru.squashfs.gpg
+│   │       │   ├── minimal.size
+│   │       │   ├── minimal.squashfs
+│   │       │   ├── minimal.squashfs.gpg
+│   │       │   ├── minimal.standard.de.manifest
+│   │       │   ├── minimal.standard.de.size
+│   │       │   ├── minimal.standard.de.squashfs
+│   │       │   ├── minimal.standard.de.squashfs.gpg
+│   │       │   ├── minimal.standard.enhanced-secureboot.de.manifest
+│   │       │   ├── minimal.standard.enhanced-secureboot.de.size
+│   │       │   ├── minimal.standard.enhanced-secureboot.de.squashfs
+│   │       │   ├── minimal.standard.enhanced-secureboot.de.squashfs.gpg
+│   │       │   ├── minimal.standard.enhanced-secureboot.en.manifest
+│   │       │   ├── minimal.standard.enhanced-secureboot.en.size
+│   │       │   ├── minimal.standard.enhanced-secureboot.en.squashfs
+│   │       │   ├── minimal.standard.enhanced-secureboot.en.squashfs.gpg
+│   │       │   ├── minimal.standard.enhanced-secureboot.es.manifest
+│   │       │   ├── minimal.standard.enhanced-secureboot.es.size
+│   │       │   ├── minimal.standard.enhanced-secureboot.es.squashfs
+│   │       │   ├── minimal.standard.enhanced-secureboot.es.squashfs.gpg
+│   │       │   ├── minimal.standard.enhanced-secureboot.fr.manifest
+│   │       │   ├── minimal.standard.enhanced-secureboot.fr.size
+│   │       │   ├── minimal.standard.enhanced-secureboot.fr.squashfs
+│   │       │   ├── minimal.standard.enhanced-secureboot.fr.squashfs.gpg
+│   │       │   ├── minimal.standard.enhanced-secureboot.it.manifest
+│   │       │   ├── minimal.standard.enhanced-secureboot.it.size
+│   │       │   ├── minimal.standard.enhanced-secureboot.it.squashfs
+│   │       │   ├── minimal.standard.enhanced-secureboot.it.squashfs.gpg
+│   │       │   ├── minimal.standard.enhanced-secureboot.manifest
+│   │       │   ├── minimal.standard.enhanced-secureboot.no-languages.manifest
+│   │       │   ├── minimal.standard.enhanced-secureboot.no-languages.size
+│   │       │   ├── minimal.standard.enhanced-secureboot.no-languages.squashfs
+│   │       │   ├── minimal.standard.enhanced-secureboot.no-languages.squashfs.gpg
+│   │       │   ├── minimal.standard.enhanced-secureboot.pt.manifest
+│   │       │   ├── minimal.standard.enhanced-secureboot.pt.size
+│   │       │   ├── minimal.standard.enhanced-secureboot.pt.squashfs
+│   │       │   ├── minimal.standard.enhanced-secureboot.pt.squashfs.gpg
+│   │       │   ├── minimal.standard.enhanced-secureboot.ru.manifest
+│   │       │   ├── minimal.standard.enhanced-secureboot.ru.size
+│   │       │   ├── minimal.standard.enhanced-secureboot.ru.squashfs
+│   │       │   ├── minimal.standard.enhanced-secureboot.ru.squashfs.gpg
+│   │       │   ├── minimal.standard.enhanced-secureboot.size
+│   │       │   ├── minimal.standard.enhanced-secureboot.squashfs
+│   │       │   ├── minimal.standard.enhanced-secureboot.squashfs.gpg
+│   │       │   ├── minimal.standard.enhanced-secureboot.zh.manifest
+│   │       │   ├── minimal.standard.enhanced-secureboot.zh.size
+│   │       │   ├── minimal.standard.enhanced-secureboot.zh.squashfs
+│   │       │   ├── minimal.standard.enhanced-secureboot.zh.squashfs.gpg
+│   │       │   ├── minimal.standard.en.manifest
+│   │       │   ├── minimal.standard.en.size
+│   │       │   ├── minimal.standard.en.squashfs
+│   │       │   ├── minimal.standard.en.squashfs.gpg
+│   │       │   ├── minimal.standard.es.manifest
+│   │       │   ├── minimal.standard.es.size
+│   │       │   ├── minimal.standard.es.squashfs
+│   │       │   ├── minimal.standard.es.squashfs.gpg
+│   │       │   ├── minimal.standard.fr.manifest
+│   │       │   ├── minimal.standard.fr.size
+│   │       │   ├── minimal.standard.fr.squashfs
+│   │       │   ├── minimal.standard.fr.squashfs.gpg
+│   │       │   ├── minimal.standard.it.manifest
+│   │       │   ├── minimal.standard.it.size
+│   │       │   ├── minimal.standard.it.squashfs
+│   │       │   ├── minimal.standard.it.squashfs.gpg
+│   │       │   ├── minimal.standard.live.manifest
+│   │       │   ├── minimal.standard.live.size
+│   │       │   ├── minimal.standard.live.squashfs
+│   │       │   ├── minimal.standard.live.squashfs.gpg
+│   │       │   ├── minimal.standard.manifest
+│   │       │   ├── minimal.standard.no-languages.manifest
+│   │       │   ├── minimal.standard.no-languages.size
+│   │       │   ├── minimal.standard.no-languages.squashfs
+│   │       │   ├── minimal.standard.no-languages.squashfs.gpg
+│   │       │   ├── minimal.standard.pt.manifest
+│   │       │   ├── minimal.standard.pt.size
+│   │       │   ├── minimal.standard.pt.squashfs
+│   │       │   ├── minimal.standard.pt.squashfs.gpg
+│   │       │   ├── minimal.standard.ru.manifest
+│   │       │   ├── minimal.standard.ru.size
+│   │       │   ├── minimal.standard.ru.squashfs
+│   │       │   ├── minimal.standard.ru.squashfs.gpg
+│   │       │   ├── minimal.standard.size
+│   │       │   ├── minimal.standard.squashfs
+│   │       │   ├── minimal.standard.squashfs.gpg
+│   │       │   ├── minimal.standard.zh.manifest
+│   │       │   ├── minimal.standard.zh.size
+│   │       │   ├── minimal.standard.zh.squashfs
+│   │       │   ├── minimal.standard.zh.squashfs.gpg
+│   │       │   ├── minimal.zh.manifest
+│   │       │   ├── minimal.zh.size
+│   │       │   ├── minimal.zh.squashfs
+│   │       │   ├── minimal.zh.squashfs.gpg
+│   │       │   └── vmlinuz
+│   │       ├── dists
+│   │       │   ├── noble
+│   │       │   │   ├── main
+│   │       │   │   │   ├── binary-amd64
+│   │       │   │   │   │   └── Packages.gz
+│   │       │   │   │   ├── binary-i386
+│   │       │   │   │   │   └── Packages.gz
+│   │       │   │   │   └── source
+│   │       │   │   ├── Release
+│   │       │   │   ├── Release.gpg
+│   │       │   │   └── restricted
+│   │       │   │       ├── binary-amd64
+│   │       │   │       │   └── Packages.gz
+│   │       │   │       ├── binary-i386
+│   │       │   │       │   └── Packages.gz
+│   │       │   │       └── source
+│   │       │   ├── stable -> noble
+│   │       │   └── unstable -> noble
+│   │       ├── EFI
+│   │       │   └── boot
+│   │       │       ├── bootx64.efi
+│   │       │       ├── grubx64.efi
+│   │       │       └── mmx64.efi
+│   │       ├── install
+│   │       ├── md5sum.txt
+│   │       ├── pool
+│   │       │   ├── main
+│   │       │   │   ├── a
+│   │       │   │   │   └── amd64-microcode
+│   │       │   │   │       └── amd64-microcode_3.20250311.1ubuntu0.24.04.1_amd64.deb
+│   │       │   │   ├── b
+│   │       │   │   │   ├── b43-fwcutter
+│   │       │   │   │   │   └── b43-fwcutter_1%3a019-11build1_amd64.deb
+│   │       │   │   │   ├── bcache-tools
+│   │       │   │   │   │   └── bcache-tools_1.0.8-5build1_amd64.deb
+│   │       │   │   │   ├── binutils
+│   │       │   │   │   │   ├── binutils_2.42-4ubuntu2.5_amd64.deb
+│   │       │   │   │   │   ├── binutils-common_2.42-4ubuntu2.5_amd64.deb
+│   │       │   │   │   │   ├── binutils-x86-64-linux-gnu_2.42-4ubuntu2.5_amd64.deb
+│   │       │   │   │   │   ├── libbinutils_2.42-4ubuntu2.5_amd64.deb
+│   │       │   │   │   │   ├── libctf0_2.42-4ubuntu2.5_amd64.deb
+│   │       │   │   │   │   ├── libctf-nobfd0_2.42-4ubuntu2.5_amd64.deb
+│   │       │   │   │   │   ├── libgprofng0_2.42-4ubuntu2.5_amd64.deb
+│   │       │   │   │   │   └── libsframe1_2.42-4ubuntu2.5_amd64.deb
+│   │       │   │   │   ├── bpfcc
+│   │       │   │   │   │   ├── bpfcc-tools_0.29.1+ds-1ubuntu7_all.deb
+│   │       │   │   │   │   ├── libbpfcc_0.29.1+ds-1ubuntu7_amd64.deb
+│   │       │   │   │   │   └── python3-bpfcc_0.29.1+ds-1ubuntu7_all.deb
+│   │       │   │   │   ├── bpftrace
+│   │       │   │   │   │   └── bpftrace_0.20.2-1ubuntu4.3_amd64.deb
+│   │       │   │   │   ├── btrfs-progs
+│   │       │   │   │   │   └── btrfs-progs_6.6.3-1.1build2_amd64.deb
+│   │       │   │   │   ├── build-essential
+│   │       │   │   │   │   └── build-essential_12.10ubuntu1_amd64.deb
+│   │       │   │   │   └── bzip2
+│   │       │   │   │       └── bzip2_1.0.8-5.1build0.1_amd64.deb
+│   │       │   │   ├── c
+│   │       │   │   │   └── cryptsetup
+│   │       │   │   │       ├── cryptsetup_2%3a2.7.0-1ubuntu4.2_amd64.deb
+│   │       │   │   │       ├── cryptsetup-bin_2%3a2.7.0-1ubuntu4.2_amd64.deb
+│   │       │   │   │       └── cryptsetup-initramfs_2%3a2.7.0-1ubuntu4.2_all.deb
+│   │       │   │   ├── d
+│   │       │   │   │   ├── dbus
+│   │       │   │   │   │   └── libdbus-1-3_1.14.10-4ubuntu4.1_i386.deb
+│   │       │   │   │   ├── dkms
+│   │       │   │   │   │   └── dkms_3.0.11-1ubuntu13_all.deb
+│   │       │   │   │   └── dpkg
+│   │       │   │   │       ├── dpkg-dev_1.22.6ubuntu6.1_all.deb
+│   │       │   │   │       └── libdpkg-perl_1.22.6ubuntu6.1_all.deb
+│   │       │   │   ├── e
+│   │       │   │   │   ├── e2fsprogs
+│   │       │   │   │   │   └── libcom-err2_1.47.0-2.4~exp1ubuntu4.1_i386.deb
+│   │       │   │   │   ├── efibootmgr
+│   │       │   │   │   │   └── efibootmgr_18-1build2_amd64.deb
+│   │       │   │   │   ├── egl-wayland
+│   │       │   │   │   │   └── libnvidia-egl-wayland1_1%3a1.1.13-1build1_amd64.deb
+│   │       │   │   │   └── expat
+│   │       │   │   │       └── libexpat1_2.6.1-2ubuntu0.3_i386.deb
+│   │       │   │   ├── f
+│   │       │   │   │   ├── fakeroot
+│   │       │   │   │   │   ├── fakeroot_1.33-1_amd64.deb
+│   │       │   │   │   │   └── libfakeroot_1.33-1_amd64.deb
+│   │       │   │   │   ├── finalrd
+│   │       │   │   │   │   └── finalrd_9build1_all.deb
+│   │       │   │   │   └── firmware-sof
+│   │       │   │   │       └── firmware-sof-signed_2023.12.1-1ubuntu1.7_all.deb
+│   │       │   │   ├── g
+│   │       │   │   │   ├── gamemode
+│   │       │   │   │   │   ├── libgamemode0_1.8.1-2build1_i386.deb
+│   │       │   │   │   │   └── libgamemodeauto0_1.8.1-2build1_i386.deb
+│   │       │   │   │   ├── gawk
+│   │       │   │   │   │   └── gawk_1%3a5.2.1-2build3_amd64.deb
+│   │       │   │   │   ├── gcc-13
+│   │       │   │   │   │   ├── g++-13_13.3.0-6ubuntu2~24.04_amd64.deb
+│   │       │   │   │   │   ├── g++-13-x86-64-linux-gnu_13.3.0-6ubuntu2~24.04_amd64.deb
+│   │       │   │   │   │   ├── gcc-13_13.3.0-6ubuntu2~24.04_amd64.deb
+│   │       │   │   │   │   ├── gcc-13-base_13.3.0-6ubuntu2~24.04_i386.deb
+│   │       │   │   │   │   └── gcc-13-x86-64-linux-gnu_13.3.0-6ubuntu2~24.04_amd64.deb
+│   │       │   │   │   ├── gcc-14
+│   │       │   │   │   │   ├── libatomic1_14.2.0-4ubuntu2~24.04_i386.deb
+│   │       │   │   │   │   ├── libcc1-0_14.2.0-4ubuntu2~24.04_amd64.deb
+│   │       │   │   │   │   ├── libgcc-s1_14.2.0-4ubuntu2~24.04_i386.deb
+│   │       │   │   │   │   └── libstdc++6_14.2.0-4ubuntu2~24.04_i386.deb
+│   │       │   │   │   ├── gcc-defaults
+│   │       │   │   │   │   ├── g++_4%3a13.2.0-7ubuntu1_amd64.deb
+│   │       │   │   │   │   ├── gcc_4%3a13.2.0-7ubuntu1_amd64.deb
+│   │       │   │   │   │   ├── gcc-x86-64-linux-gnu_4%3a13.2.0-7ubuntu1_amd64.deb
+│   │       │   │   │   │   └── g++-x86-64-linux-gnu_4%3a13.2.0-7ubuntu1_amd64.deb
+│   │       │   │   │   ├── glibc
+│   │       │   │   │   │   ├── libc6_2.39-0ubuntu8.5_i386.deb
+│   │       │   │   │   │   ├── libc6-dev_2.39-0ubuntu8.5_amd64.deb
+│   │       │   │   │   │   ├── libc-dev-bin_2.39-0ubuntu8.5_amd64.deb
+│   │       │   │   │   │   └── libc-devtools_2.39-0ubuntu8.5_amd64.deb
+│   │       │   │   │   ├── grub2
+│   │       │   │   │   │   ├── grub2-common_2.12-1ubuntu7.3_amd64.deb
+│   │       │   │   │   │   ├── grub-pc_2.12-1ubuntu7.3_amd64.deb
+│   │       │   │   │   │   └── grub-pc-bin_2.12-1ubuntu7.3_amd64.deb
+│   │       │   │   │   ├── grub2-signed
+│   │       │   │   │   │   └── grub-efi-amd64-signed_1.202.5+2.12-1ubuntu7.3_amd64.deb
+│   │       │   │   │   ├── grub2-unsigned
+│   │       │   │   │   │   ├── grub-efi-amd64_2.12-1ubuntu7.3_amd64.deb
+│   │       │   │   │   │   └── grub-efi-amd64-bin_2.12-1ubuntu7.3_amd64.deb
+│   │       │   │   │   └── grub-gfxpayload-lists
+│   │       │   │   │       └── grub-gfxpayload-lists_0.7build2_amd64.deb
+│   │       │   │   ├── h
+│   │       │   │   │   └── hwdata
+│   │       │   │   │       └── hwdata_0.379-1_all.deb
+│   │       │   │   ├── i
+│   │       │   │   │   ├── ieee-data
+│   │       │   │   │   │   └── ieee-data_20220827.1_all.deb
+│   │       │   │   │   ├── intel-microcode
+│   │       │   │   │   │   └── intel-microcode_3.20250512.0ubuntu0.24.04.1_amd64.deb
+│   │       │   │   │   └── iucode-tool
+│   │       │   │   │       └── iucode-tool_2.3.1-3build1_amd64.deb
+│   │       │   │   ├── j
+│   │       │   │   │   └── jfsutils
+│   │       │   │   │       └── jfsutils_1.1.15-5build4_amd64.deb
+│   │       │   │   ├── k
+│   │       │   │   │   ├── keyutils
+│   │       │   │   │   │   └── libkeyutils1_1.6.3-3build1_i386.deb
+│   │       │   │   │   └── krb5
+│   │       │   │   │       ├── libgssapi-krb5-2_1.20.1-6ubuntu2.6_i386.deb
+│   │       │   │   │       ├── libk5crypto3_1.20.1-6ubuntu2.6_i386.deb
+│   │       │   │   │       ├── libkrb5-3_1.20.1-6ubuntu2.6_i386.deb
+│   │       │   │   │       └── libkrb5support0_1.20.1-6ubuntu2.6_i386.deb
+│   │       │   │   ├── l
+│   │       │   │   │   ├── linux
+│   │       │   │   │   │   ├── linux-headers-6.8.0-71_6.8.0-71.71_all.deb
+│   │       │   │   │   │   ├── linux-headers-6.8.0-71-generic_6.8.0-71.71_amd64.deb
+│   │       │   │   │   │   ├── linux-libc-dev_6.8.0-71.71_amd64.deb
+│   │       │   │   │   │   ├── linux-modules-6.8.0-31-generic_6.8.0-31.31_amd64.deb
+│   │       │   │   │   │   ├── linux-modules-ivsc-6.8.0-31-generic_6.8.0-31.31_amd64.deb
+│   │       │   │   │   │   └── linux-tools-common_6.8.0-71.71_all.deb
+│   │       │   │   │   ├── linux-firmware
+│   │       │   │   │   │   └── linux-firmware_20240318.git3b128b60-0ubuntu2.15_amd64.deb
+│   │       │   │   │   ├── linux-hwe-6.14
+│   │       │   │   │   │   ├── linux-headers-6.14.0-27-generic_6.14.0-27.27~24.04.1_amd64.deb
+│   │       │   │   │   │   ├── linux-hwe-6.14-headers-6.14.0-27_6.14.0-27.27~24.04.1_all.deb
+│   │       │   │   │   │   ├── linux-hwe-6.14-tools-6.14.0-27_6.14.0-27.27~24.04.1_amd64.deb
+│   │       │   │   │   │   ├── linux-modules-6.14.0-27-generic_6.14.0-27.27~24.04.1_amd64.deb
+│   │       │   │   │   │   ├── linux-modules-extra-6.14.0-27-generic_6.14.0-27.27~24.04.1_amd64.deb
+│   │       │   │   │   │   ├── linux-modules-ipu6-6.14.0-27-generic_6.14.0-27.27~24.04.1_amd64.deb
+│   │       │   │   │   │   ├── linux-modules-iwlwifi-6.14.0-27-generic_6.14.0-27.27~24.04.1_amd64.deb
+│   │       │   │   │   │   └── linux-tools-6.14.0-27-generic_6.14.0-27.27~24.04.1_amd64.deb
+│   │       │   │   │   ├── linux-meta
+│   │       │   │   │   │   ├── linux-headers-generic_6.8.0-71.71_amd64.deb
+│   │       │   │   │   │   └── linux-modules-ivsc-generic-hwe-24.04_6.8.0-31.31_amd64.deb
+│   │       │   │   │   ├── linux-meta-hwe-6.14
+│   │       │   │   │   │   ├── linux-generic-hwe-24.04_6.14.0-27.27~24.04.1_amd64.deb
+│   │       │   │   │   │   ├── linux-headers-generic-hwe-24.04_6.14.0-27.27~24.04.1_amd64.deb
+│   │       │   │   │   │   ├── linux-image-generic-hwe-24.04_6.14.0-27.27~24.04.1_amd64.deb
+│   │       │   │   │   │   ├── linux-modules-ipu6-generic-hwe-24.04_6.14.0-27.27~24.04.1_amd64.deb
+│   │       │   │   │   │   └── linux-modules-iwlwifi-generic-hwe-24.04_6.14.0-27.27~24.04.1_amd64.deb
+│   │       │   │   │   ├── linux-meta-oem-6.8
+│   │       │   │   │   │   ├── linux-headers-oem-24.04_6.8.0-1032.32_amd64.deb
+│   │       │   │   │   │   ├── linux-image-oem-24.04_6.8.0-1032.32_amd64.deb
+│   │       │   │   │   │   ├── linux-modules-ipu6-oem-24.04_6.8.0-1032.32_amd64.deb
+│   │       │   │   │   │   ├── linux-modules-iwlwifi-oem-24.04_6.8.0-1032.32_amd64.deb
+│   │       │   │   │   │   └── linux-oem-24.04_6.8.0-1032.32_amd64.deb
+│   │       │   │   │   ├── linux-oem-6.8
+│   │       │   │   │   │   ├── linux-headers-6.8.0-1032-oem_6.8.0-1032.32_amd64.deb
+│   │       │   │   │   │   ├── linux-modules-6.8.0-1032-oem_6.8.0-1032.32_amd64.deb
+│   │       │   │   │   │   ├── linux-modules-ipu6-6.8.0-1032-oem_6.8.0-1032.32_amd64.deb
+│   │       │   │   │   │   ├── linux-modules-iwlwifi-6.8.0-1032-oem_6.8.0-1032.32_amd64.deb
+│   │       │   │   │   │   ├── linux-oem-6.8-headers-6.8.0-1032_6.8.0-1032.32_all.deb
+│   │       │   │   │   │   ├── linux-oem-6.8-tools-6.8.0-1032_6.8.0-1032.32_amd64.deb
+│   │       │   │   │   │   └── linux-tools-6.8.0-1032-oem_6.8.0-1032.32_amd64.deb
+│   │       │   │   │   ├── linux-signed
+│   │       │   │   │   │   └── linux-image-6.8.0-31-generic_6.8.0-31.31_amd64.deb
+│   │       │   │   │   ├── linux-signed-hwe-6.14
+│   │       │   │   │   │   └── linux-image-6.14.0-27-generic_6.14.0-27.27~24.04.1_amd64.deb
+│   │       │   │   │   ├── linux-signed-oem-6.8
+│   │       │   │   │   │   └── linux-image-6.8.0-1032-oem_6.8.0-1032.32_amd64.deb
+│   │       │   │   │   ├── llvm-toolchain-18
+│   │       │   │   │   │   ├── libclang1-18_1%3a18.1.3-1ubuntu1_amd64.deb
+│   │       │   │   │   │   ├── libclang-cpp18_1%3a18.1.3-1ubuntu1_amd64.deb
+│   │       │   │   │   │   └── libllvm18_1%3a18.1.3-1ubuntu1_amd64.deb
+│   │       │   │   │   ├── lm-sensors
+│   │       │   │   │   │   └── libsensors5_1%3a3.6.0-9build1_i386.deb
+│   │       │   │   │   ├── lto-disabled-list
+│   │       │   │   │   │   └── lto-disabled-list_47_all.deb
+│   │       │   │   │   ├── lvm2
+│   │       │   │   │   │   ├── dmeventd_2%3a1.02.185-3ubuntu3.2_amd64.deb
+│   │       │   │   │   │   ├── libdevmapper-event1.02.1_2%3a1.02.185-3ubuntu3.2_amd64.deb
+│   │       │   │   │   │   ├── liblvm2cmd2.03_2.03.16-3ubuntu3.2_amd64.deb
+│   │       │   │   │   │   └── lvm2_2.03.16-3ubuntu3.2_amd64.deb
+│   │       │   │   │   └── lz4
+│   │       │   │   │       └── liblz4-1_1.9.4-1build1.1_i386.deb
+│   │       │   │   ├── liba
+│   │       │   │   │   ├── libaio
+│   │       │   │   │   │   └── libaio1t64_0.3.113-6build1.1_amd64.deb
+│   │       │   │   │   ├── libalgorithm-diff-perl
+│   │       │   │   │   │   └── libalgorithm-diff-perl_1.201-1_all.deb
+│   │       │   │   │   ├── libalgorithm-diff-xs-perl
+│   │       │   │   │   │   └── libalgorithm-diff-xs-perl_0.04-8build3_amd64.deb
+│   │       │   │   │   └── libalgorithm-merge-perl
+│   │       │   │   │       └── libalgorithm-merge-perl_0.08-5_all.deb
+│   │       │   │   ├── libb
+│   │       │   │   │   └── libbsd
+│   │       │   │   │       └── libbsd0_0.12.1-1build1.1_i386.deb
+│   │       │   │   ├── libc
+│   │       │   │   │   └── libcap2
+│   │       │   │   │       └── libcap2_1%3a2.66-5ubuntu2.2_i386.deb
+│   │       │   │   ├── libd
+│   │       │   │   │   └── libdrm
+│   │       │   │   │       ├── libdrm2_2.4.122-1~ubuntu0.24.04.1_i386.deb
+│   │       │   │   │       ├── libdrm-amdgpu1_2.4.122-1~ubuntu0.24.04.1_i386.deb
+│   │       │   │   │       ├── libdrm-intel1_2.4.122-1~ubuntu0.24.04.1_i386.deb
+│   │       │   │   │       ├── libdrm-nouveau2_2.4.122-1~ubuntu0.24.04.1_i386.deb
+│   │       │   │   │       └── libdrm-radeon1_2.4.122-1~ubuntu0.24.04.1_i386.deb
+│   │       │   │   ├── libe
+│   │       │   │   │   └── libedit
+│   │       │   │   │       └── libedit2_3.1-20230828-1build1_i386.deb
+│   │       │   │   ├── libf
+│   │       │   │   │   ├── libffi
+│   │       │   │   │   │   └── libffi8_3.4.6-1build1_i386.deb
+│   │       │   │   │   └── libfile-fcntllock-perl
+│   │       │   │   │       └── libfile-fcntllock-perl_0.22-4ubuntu5_amd64.deb
+│   │       │   │   ├── libg
+│   │       │   │   │   ├── libgcrypt20
+│   │       │   │   │   │   └── libgcrypt20_1.10.3-2build1_i386.deb
+│   │       │   │   │   ├── libglvnd
+│   │       │   │   │   │   ├── libgl1_1.7.0-1build1_i386.deb
+│   │       │   │   │   │   ├── libglvnd0_1.7.0-1build1_i386.deb
+│   │       │   │   │   │   └── libglx0_1.7.0-1build1_i386.deb
+│   │       │   │   │   └── libgpg-error
+│   │       │   │   │       └── libgpg-error0_1.47-3build2.1_i386.deb
+│   │       │   │   ├── libi
+│   │       │   │   │   └── libidn2
+│   │       │   │   │       └── libidn2-0_2.3.7-2build1.1_i386.deb
+│   │       │   │   ├── libm
+│   │       │   │   │   └── libmd
+│   │       │   │   │       └── libmd0_1.1.0-2build1.1_i386.deb
+│   │       │   │   ├── libn
+│   │       │   │   │   └── libnsl
+│   │       │   │   │       └── libnsl2_1.3.0-3build3_i386.deb
+│   │       │   │   ├── libp
+│   │       │   │   │   └── libpciaccess
+│   │       │   │   │       └── libpciaccess0_0.17-3ubuntu0.24.04.2_i386.deb
+│   │       │   │   ├── libs
+│   │       │   │   │   └── libsigsegv
+│   │       │   │   │       └── libsigsegv2_2.14-1ubuntu2_amd64.deb
+│   │       │   │   ├── libu
+│   │       │   │   │   ├── libunistring
+│   │       │   │   │   │   └── libunistring5_1.1-2build1.1_i386.deb
+│   │       │   │   │   └── liburcu
+│   │       │   │   │       └── liburcu8t64_0.14.0-3.1build1_amd64.deb
+│   │       │   │   ├── libv
+│   │       │   │   │   └── libvdpau
+│   │       │   │   │       ├── libvdpau1_1.5-2build1_amd64.deb
+│   │       │   │   │       └── vdpau-driver-all_1.5-2build1_amd64.deb
+│   │       │   │   ├── libx
+│   │       │   │   │   ├── libx11
+│   │       │   │   │   │   ├── libx11-6_2%3a1.8.7-1build1_i386.deb
+│   │       │   │   │   │   └── libx11-xcb1_2%3a1.8.7-1build1_i386.deb
+│   │       │   │   │   ├── libxau
+│   │       │   │   │   │   └── libxau6_1%3a1.0.9-1build6_i386.deb
+│   │       │   │   │   ├── libxcb
+│   │       │   │   │   │   ├── libxcb1_1.15-1ubuntu2_i386.deb
+│   │       │   │   │   │   ├── libxcb-dri2-0_1.15-1ubuntu2_i386.deb
+│   │       │   │   │   │   ├── libxcb-dri3-0_1.15-1ubuntu2_i386.deb
+│   │       │   │   │   │   ├── libxcb-glx0_1.15-1ubuntu2_i386.deb
+│   │       │   │   │   │   ├── libxcb-present0_1.15-1ubuntu2_i386.deb
+│   │       │   │   │   │   ├── libxcb-randr0_1.15-1ubuntu2_i386.deb
+│   │       │   │   │   │   ├── libxcb-shm0_1.15-1ubuntu2_i386.deb
+│   │       │   │   │   │   ├── libxcb-sync1_1.15-1ubuntu2_i386.deb
+│   │       │   │   │   │   └── libxcb-xfixes0_1.15-1ubuntu2_i386.deb
+│   │       │   │   │   ├── libxcrypt
+│   │       │   │   │   │   └── libcrypt-dev_1%3a4.4.36-4build1_amd64.deb
+│   │       │   │   │   ├── libxdmcp
+│   │       │   │   │   │   └── libxdmcp6_1%3a1.1.3-0ubuntu6_i386.deb
+│   │       │   │   │   ├── libxext
+│   │       │   │   │   │   └── libxext6_2%3a1.3.4-1build2_i386.deb
+│   │       │   │   │   ├── libxfixes
+│   │       │   │   │   │   └── libxfixes3_1%3a6.0.0-2build1_i386.deb
+│   │       │   │   │   ├── libxml2
+│   │       │   │   │   │   └── libxml2_2.9.14+dfsg-1.3ubuntu3.3_i386.deb
+│   │       │   │   │   ├── libxshmfence
+│   │       │   │   │   │   └── libxshmfence1_1.3-1build5_i386.deb
+│   │       │   │   │   └── libxxf86vm
+│   │       │   │   │       └── libxxf86vm1_1%3a1.1.4-1build4_i386.deb
+│   │       │   │   ├── libz
+│   │       │   │   │   └── libzstd
+│   │       │   │   │       └── libzstd1_1.5.5+dfsg2-2build1.1_i386.deb
+│   │       │   │   ├── m
+│   │       │   │   │   ├── make-dfsg
+│   │       │   │   │   │   └── make_4.3-4.1build2_amd64.deb
+│   │       │   │   │   ├── manpages
+│   │       │   │   │   │   └── manpages-dev_6.7-2_all.deb
+│   │       │   │   │   ├── mdadm
+│   │       │   │   │   │   └── mdadm_4.3-1ubuntu2.1_amd64.deb
+│   │       │   │   │   ├── mesa
+│   │       │   │   │   │   ├── libgl1-mesa-dri_25.0.7-0ubuntu0.24.04.1_i386.deb
+│   │       │   │   │   │   ├── libglapi-mesa_24.2.8-1ubuntu1~24.04.1_i386.deb
+│   │       │   │   │   │   ├── libglx-mesa0_25.0.7-0ubuntu0.24.04.1_i386.deb
+│   │       │   │   │   │   └── mesa-vdpau-drivers_25.0.7-0ubuntu0.24.04.1_amd64.deb
+│   │       │   │   │   ├── mokutil
+│   │       │   │   │   │   └── mokutil_0.6.0-2build3_amd64.deb
+│   │       │   │   │   └── multipath-tools
+│   │       │   │   │       ├── kpartx_0.9.4-5ubuntu8_amd64.deb
+│   │       │   │   │       ├── kpartx-boot_0.9.4-5ubuntu8_all.deb
+│   │       │   │   │       ├── multipath-tools_0.9.4-5ubuntu8_amd64.deb
+│   │       │   │   │       └── multipath-tools-boot_0.9.4-5ubuntu8_all.deb
+│   │       │   │   ├── n
+│   │       │   │   │   ├── ncurses
+│   │       │   │   │   │   └── libtinfo6_6.4+20240113-1ubuntu2_i386.deb
+│   │       │   │   │   ├── nvidia-prime
+│   │       │   │   │   │   └── nvidia-prime_0.8.17.2_all.deb
+│   │       │   │   │   └── nvidia-settings
+│   │       │   │   │       ├── libxnvctrl0_510.47.03-0ubuntu4_amd64.deb
+│   │       │   │   │       └── nvidia-settings_510.47.03-0ubuntu4_amd64.deb
+│   │       │   │   ├── o
+│   │       │   │   │   ├── oem-qemu-meta
+│   │       │   │   │   │   └── oem-qemu-meta_20.04~ubuntu6_all.deb
+│   │       │   │   │   ├── oem-somerville-lapras-13-meta
+│   │       │   │   │   │   └── oem-somerville-lapras-13-meta_24.04~ubuntu1_all.deb
+│   │       │   │   │   ├── oem-somerville-lapras-meta
+│   │       │   │   │   │   └── oem-somerville-lapras-meta_24.04~ubuntu1_all.deb
+│   │       │   │   │   ├── oem-somerville-magmar-meta
+│   │       │   │   │   │   └── oem-somerville-magmar-meta_24.04~ubuntu1_all.deb
+│   │       │   │   │   ├── oem-somerville-muk-meta
+│   │       │   │   │   │   └── oem-somerville-muk-meta_24.04~ubuntu1_all.deb
+│   │       │   │   │   ├── oem-somerville-oddish13-meta
+│   │       │   │   │   │   └── oem-somerville-oddish13-meta_24.04~ubuntu1_all.deb
+│   │       │   │   │   ├── oem-somerville-oddish-meta
+│   │       │   │   │   │   └── oem-somerville-oddish-meta_24.04~ubuntu1_all.deb
+│   │       │   │   │   ├── oem-somerville-oricorio-meta
+│   │       │   │   │   │   └── oem-somerville-oricorio-meta_24.04~ubuntu1_all.deb
+│   │       │   │   │   ├── oem-somerville-tentacool-meta
+│   │       │   │   │   │   └── oem-somerville-tentacool-meta_24.04~ubuntu1_all.deb
+│   │       │   │   │   ├── oem-somerville-tentacool-rpl-meta
+│   │       │   │   │   │   └── oem-somerville-tentacool-rpl-meta_24.04~ubuntu1_all.deb
+│   │       │   │   │   ├── oem-somerville-torchic-meta
+│   │       │   │   │   │   └── oem-somerville-torchic-meta_24.04~ubuntu1_all.deb
+│   │       │   │   │   ├── oem-somerville-treecko-meta
+│   │       │   │   │   │   └── oem-somerville-treecko-meta_24.04~ubuntu1_all.deb
+│   │       │   │   │   ├── open-iscsi
+│   │       │   │   │   │   ├── libopeniscsiusr_2.1.9-3ubuntu5.4_amd64.deb
+│   │       │   │   │   │   └── open-iscsi_2.1.9-3ubuntu5.4_amd64.deb
+│   │       │   │   │   └── open-isns
+│   │       │   │   │       └── libisns0t64_0.101-0.3build3_amd64.deb
+│   │       │   │   ├── p
+│   │       │   │   │   ├── pkgconf
+│   │       │   │   │   │   ├── libpkgconf3_1.8.1-2build1_amd64.deb
+│   │       │   │   │   │   ├── pkgconf_1.8.1-2build1_amd64.deb
+│   │       │   │   │   │   ├── pkgconf-bin_1.8.1-2build1_amd64.deb
+│   │       │   │   │   │   └── pkg-config_1.8.1-2build1_amd64.deb
+│   │       │   │   │   └── python-netaddr
+│   │       │   │   │       └── python3-netaddr_0.8.0-2ubuntu1_all.deb
+│   │       │   │   ├── r
+│   │       │   │   │   ├── realmd
+│   │       │   │   │   │   └── realmd_0.17.1-3build2_amd64.deb
+│   │       │   │   │   ├── reiserfsprogs
+│   │       │   │   │   │   ├── libreiserfscore0t64_1%3a3.6.27-7.1build1_amd64.deb
+│   │       │   │   │   │   └── reiserfsprogs_1%3a3.6.27-7.1build1_amd64.deb
+│   │       │   │   │   └── rpcsvc-proto
+│   │       │   │   │       └── rpcsvc-proto_1.4.2-0ubuntu7_amd64.deb
+│   │       │   │   ├── s
+│   │       │   │   │   ├── screen-resolution-extra
+│   │       │   │   │   │   └── screen-resolution-extra_0.18.3_all.deb
+│   │       │   │   │   ├── setserial
+│   │       │   │   │   │   └── setserial_2.17-54_amd64.deb
+│   │       │   │   │   ├── sg3-utils
+│   │       │   │   │   │   ├── libsgutils2-1.46-2_1.46-3ubuntu4_amd64.deb
+│   │       │   │   │   │   ├── sg3-utils_1.46-3ubuntu4_amd64.deb
+│   │       │   │   │   │   └── sg3-utils-udev_1.46-3ubuntu4_all.deb
+│   │       │   │   │   ├── shim-signed
+│   │       │   │   │   │   └── shim-signed_1.58+15.8-0ubuntu1_amd64.deb
+│   │       │   │   │   └── systemd
+│   │       │   │   │       └── libsystemd0_255.4-1ubuntu8.10_i386.deb
+│   │       │   │   ├── t
+│   │       │   │   │   ├── thermald
+│   │       │   │   │   │   └── thermald_2.5.6-2ubuntu0.24.04.2_amd64.deb
+│   │       │   │   │   └── thin-provisioning-tools
+│   │       │   │   │       └── thin-provisioning-tools_0.9.0-2ubuntu5.1_amd64.deb
+│   │       │   │   ├── u
+│   │       │   │   │   ├── ubuntu-keyring
+│   │       │   │   │   │   └── ubuntu-oem-keyring_2023.11.28.1_all.deb
+│   │       │   │   │   └── ubuntu-meta
+│   │       │   │   │       └── ubuntu-kernel-accessories_1.539.2_amd64.deb
+│   │       │   │   ├── x
+│   │       │   │   │   ├── xfsprogs
+│   │       │   │   │   │   └── xfsprogs_6.6.0-1ubuntu2.1_amd64.deb
+│   │       │   │   │   └── xz-utils
+│   │       │   │   │       └── liblzma5_5.6.1+really5.4.5-1ubuntu0.2_i386.deb
+│   │       │   │   └── z
+│   │       │   │       ├── zfs-linux
+│   │       │   │       │   ├── libnvpair3linux_2.2.2-0ubuntu9.4_amd64.deb
+│   │       │   │       │   ├── libuutil3linux_2.2.2-0ubuntu9.4_amd64.deb
+│   │       │   │       │   ├── libzfs4linux_2.2.2-0ubuntu9.4_amd64.deb
+│   │       │   │       │   ├── libzpool5linux_2.2.2-0ubuntu9.4_amd64.deb
+│   │       │   │       │   ├── zfs-initramfs_2.2.2-0ubuntu9.4_amd64.deb
+│   │       │   │       │   ├── zfsutils-linux_2.2.2-0ubuntu9.4_amd64.deb
+│   │       │   │       │   └── zfs-zed_2.2.2-0ubuntu9.4_amd64.deb
+│   │       │   │       └── zlib
+│   │       │   │           └── zlib1g_1%3a1.3.dfsg-3.1ubuntu2.1_i386.deb
+│   │       │   └── restricted
+│   │       │       ├── b
+│   │       │       │   └── broadcom-sta
+│   │       │       │       └── broadcom-sta-dkms_6.30.223.271-23ubuntu1.1_all.deb
+│   │       │       ├── l
+│   │       │       │   ├── linux-restricted-modules-hwe-6.14
+│   │       │       │   │   ├── linux-modules-nvidia-535-6.14.0-27-generic_6.14.0-27.27~24.04.1_amd64.deb
+│   │       │       │   │   ├── linux-modules-nvidia-535-generic-hwe-24.04_6.14.0-27.27~24.04.1_amd64.deb
+│   │       │       │   │   ├── linux-modules-nvidia-550-6.14.0-27-generic_6.14.0-27.27~24.04.1_amd64.deb
+│   │       │       │   │   ├── linux-modules-nvidia-550-generic-hwe-24.04_6.14.0-27.27~24.04.1_amd64.deb
+│   │       │       │   │   ├── linux-objects-nvidia-535-6.14.0-27-generic_6.14.0-27.27~24.04.1_amd64.deb
+│   │       │       │   │   └── linux-objects-nvidia-550-6.14.0-27-generic_6.14.0-27.27~24.04.1_amd64.deb
+│   │       │       │   ├── linux-restricted-modules-oem-6.8
+│   │       │       │   │   ├── linux-modules-nvidia-535-6.8.0-1032-oem_6.8.0-1032.32+1_amd64.deb
+│   │       │       │   │   ├── linux-modules-nvidia-535-oem-24.04_6.8.0-1032.32+1_amd64.deb
+│   │       │       │   │   ├── linux-modules-nvidia-550-6.8.0-1032-oem_6.8.0-1032.32+1_amd64.deb
+│   │       │       │   │   ├── linux-modules-nvidia-550-oem-24.04_6.8.0-1032.32+1_amd64.deb
+│   │       │       │   │   ├── linux-objects-nvidia-535-6.8.0-1032-oem_6.8.0-1032.32+1_amd64.deb
+│   │       │       │   │   └── linux-objects-nvidia-550-6.8.0-1032-oem_6.8.0-1032.32+1_amd64.deb
+│   │       │       │   ├── linux-restricted-signatures-hwe-6.14
+│   │       │       │   │   └── linux-signatures-nvidia-6.14.0-27-generic_6.14.0-27.27~24.04.1_amd64.deb
+│   │       │       │   └── linux-restricted-signatures-oem-6.8
+│   │       │       │       └── linux-signatures-nvidia-6.8.0-1032-oem_6.8.0-1032.32+1_amd64.deb
+│   │       │       ├── n
+│   │       │       │   ├── nvidia-graphics-drivers-535
+│   │       │       │   │   ├── libnvidia-cfg1-535_535.247.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │   │   ├── libnvidia-common-535_535.247.01-0ubuntu0.24.04.1_all.deb
+│   │       │       │   │   ├── libnvidia-compute-535_535.247.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │   │   ├── libnvidia-compute-535_535.247.01-0ubuntu0.24.04.1_i386.deb
+│   │       │       │   │   ├── libnvidia-decode-535_535.247.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │   │   ├── libnvidia-decode-535_535.247.01-0ubuntu0.24.04.1_i386.deb
+│   │       │       │   │   ├── libnvidia-encode-535_535.247.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │   │   ├── libnvidia-encode-535_535.247.01-0ubuntu0.24.04.1_i386.deb
+│   │       │       │   │   ├── libnvidia-extra-535_535.247.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │   │   ├── libnvidia-fbc1-535_535.247.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │   │   ├── libnvidia-fbc1-535_535.247.01-0ubuntu0.24.04.1_i386.deb
+│   │       │       │   │   ├── libnvidia-gl-535_535.247.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │   │   ├── libnvidia-gl-535_535.247.01-0ubuntu0.24.04.1_i386.deb
+│   │       │       │   │   ├── nvidia-compute-utils-535_535.247.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │   │   ├── nvidia-driver-535_535.247.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │   │   ├── nvidia-firmware-535-535.247.01_535.247.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │   │   ├── nvidia-kernel-common-535_535.247.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │   │   ├── nvidia-kernel-source-535_535.247.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │   │   ├── nvidia-utils-535_535.247.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │   │   └── xserver-xorg-video-nvidia-535_535.247.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │   └── nvidia-graphics-drivers-550
+│   │       │       │       ├── libnvidia-cfg1-550_550.163.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │       ├── libnvidia-common-550_550.163.01-0ubuntu0.24.04.1_all.deb
+│   │       │       │       ├── libnvidia-compute-550_550.163.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │       ├── libnvidia-decode-550_550.163.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │       ├── libnvidia-encode-550_550.163.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │       ├── libnvidia-extra-550_550.163.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │       ├── libnvidia-fbc1-550_550.163.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │       ├── libnvidia-gl-550_550.163.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │       ├── nvidia-compute-utils-550_550.163.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │       ├── nvidia-driver-550_550.163.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │       ├── nvidia-firmware-550-550.163.01_550.163.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │       ├── nvidia-kernel-common-550_550.163.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │       ├── nvidia-kernel-source-550_550.163.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │       ├── nvidia-utils-550_550.163.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       │       └── xserver-xorg-video-nvidia-550_550.163.01-0ubuntu0.24.04.1_amd64.deb
+│   │       │       └── s
+│   │       │           └── sl-modem
+│   │       │               └── sl-modem-daemon_2.9.11~20110321-19ubuntu0.1_i386.deb
+│   │       ├── preseed
+│   │       │   └── ubuntu.seed
+│   │       └── ubuntu -> .
+│   ├── ollama_seed
+│   │   └── models
+│   │       ├── blobs
+│   │       │   ├── sha256-17e666fbe4f4c95d19936e9e4089c50c980df275d2937734edbe2a8e7f02eb40
+│   │       │   ├── sha256-7339fa418c9ad3e8e12e74ad0fd26a9cc4be8703f9c110728a992b193be85cb2
+│   │       │   ├── sha256-b1b0036de383cfacd2f6f0ec14c43139d08a215e673fadaf4f3601eac4bd5490
+│   │       │   ├── sha256-ebabfa59b71a5b96e0281ec2994977e785284e0939807a99fc340dec3c6f10de
+│   │       │   ├── sha256-ed12a4674d727a74ac4816c906094ea9d3119fbea46ca93288c3ce4ffbe38c55
+│   │       │   └── sha256-f6417cb1e26962991f8e875a93f3cb0f92bc9b4955e004881251ccbf934a19d2
+│   │       └── manifests
+│   │           └── registry.ollama.ai
+│   │               └── library
+│   │                   └── qwen3-vl
+│   │                       ├── 2b
+│   │                       └── 8b
+│   ├── ollama_seed_models.tar.gz
+│   ├── ollama_seed_qwen3vl_2b_only
+│   │   └── models
+│   │       ├── blobs
+│   │       │   ├── sha256-7339fa418c9ad3e8e12e74ad0fd26a9cc4be8703f9c110728a992b193be85cb2
+│   │       │   ├── sha256-b1b0036de383cfacd2f6f0ec14c43139d08a215e673fadaf4f3601eac4bd5490
+│   │       │   ├── sha256-ebabfa59b71a5b96e0281ec2994977e785284e0939807a99fc340dec3c6f10de
+│   │       │   └── sha256-f6417cb1e26962991f8e875a93f3cb0f92bc9b4955e004881251ccbf934a19d2
+│   │       └── manifests
+│   │           └── registry.ollama.ai
+│   │               └── library
+│   │                   └── qwen3-vl
+│   │                       └── 2b
+│   ├── ollama_seed_qwen3vl_2b_only.tar.gz
+│   ├── ollama_seed_qwen3vl_2b_only.tar.gz.sha256
+│   └── ollama_seed_qwen3-vl-2b.tar.gz
+├── docs
+├── images
+│   └── rootfs
+│       ├── etc
+│       │   └── systemd
+│       │       └── system
+│       │           ├── buddy-firstboot-seed-ollama.service
+│       │           └── multi-user.target.wants
+│       │               └── buddy-firstboot-seed-ollama.service -> /etc/systemd/system/buddy-firstboot-seed-ollama.service
+│       ├── opt
+│       │   └── buddy-os
+│       │       └── seeds
+│       │           ├── ollama_seed_qwen3vl_2b_only.tar.gz
+│       │           └── ollama_seed_qwen3vl_2b_only.tar.gz.sha256
+│       └── usr
+│           └── local
+│               └── sbin
+│                   └── firstboot_seed_ollama_qwen3vl2b.sh
+├── notes
+│   └── DECISIONS.md
+├── ProjectTree
+├── README.md
+├── scripts
+│   ├── dev
+│   │   ├── allow_folder.sh
+│   │   ├── blacklist_folder.sh
+│   │   ├── build_buildhost.sh
+│   │   ├── Containerfile
+│   │   ├── demo.sh
+│   │   ├── Dockerfile.buddyos
+│   │   ├── Dockerfile.buildhost
+│   │   ├── entrypoint_snapd.sh
+│   │   ├── export_ollama_seed.sh
+│   │   ├── firstboot_seed_ollama_qwen3vl2b.sh
+│   │   ├── no_memory_folder.sh
+│   │   ├── policy_edit.py
+│   │   ├── reload_policy.sh
+│   │   ├── remix_iso_prepare.sh
+│   │   ├── run_actionsd.sh
+│   │   ├── run_in_buildhost.sh
+│   │   ├── seed_ollama_model_from_running_store.sh
+│   │   ├── set_consent.sh
+│   │   ├── set_preset.sh
+│   │   ├── show_policy.sh
+│   │   ├── smoke_test_buildhost.sh
+│   │   └── tail_audit.sh
+│   ├── git_checkpoint.sh
+│   ├── git_set_remote.sh
+│   └── ollama_list_models.sh
+├── snaps
+│   └── buddy-core
+│       ├── bin
+│       │   ├── buddy-actionsd
+│       │   └── buddy-cli
+│       └── snap
+│           └── snapcraft.yaml
+├── specs
+│   ├── buddy_ai_settings.md
+│   ├── build.md
+│   ├── internal_api.md
+│   ├── permissions.md
+│   ├── providers.md
+│   ├── settings_storage.md
+│   ├── ui.md
+│   └── vault.md
+└── ui
+
+247 directories, 1098 files
