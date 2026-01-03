@@ -1,11 +1,30 @@
 # Buddy-OS Decisions Log
 
 ## 2026-01-03
-- Project name: Buddy-OS
-- Backbone target: Ubuntu Core 24 (Ubuntu 24.04 LTS foundation)
-- UX target: Pop!_OS-like look (rounded, modern, efficient)
-- Assistant name: Buddy
-- Interaction: Buddy Bar bottom widget + expandable chat drawer; voice optional; text always supported
-- User configuration must be GUI-only (no JSON editing, no terminal flows for end users)
-- Buddy must start restricted by default with user-controlled permission dial + folder allow/deny/no-memory zones
-- Target deliverable: Ventoy-bootable ISO installer
+- Install UX requirement: install like a normal Ubuntu Desktop distro:
+  - live ISO boots to desktop
+  - offline install works
+  - optional internet during install for updates and third-party drivers
+  - uses Ubuntu Desktop Installer (Flutter/Subiquity)
+
+- Base image decision:
+  - Use **Ubuntu Desktop 24.04 ISO remix** as the installer backbone (not Ubuntu Core).
+
+- Desktop UX decision:
+  - Ship **Pop!_OS-style COSMIC desktop** on top of Ubuntu 24.04:
+    - COSMIC session preinstalled
+    - COSMIC set as default session after install (Phase A)
+    - later: COSMIC also used in the live session (Phase B)
+
+- Buddy model defaults:
+  - Default offline baseline: Ollama Local (seeded) / qwen3-vl:2b
+  - Two active models only:
+    - Desktop Agent
+    - Dev Agent
+
+- Providers supported in UI:
+  - Ollama Local / Ollama Cloud / OpenAI / Gemini / Claude / Grok
+
+- Large model seed artifacts:
+  - Never committed to git
+  - Hosted externally and fetched during build
