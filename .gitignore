@@ -24,3 +24,12 @@ stage/
 *.assert
 *.img
 *.iso
+
+# Buddy-OS large artifacts (never commit)
+/assets/ollama-seeds/*.tar.gz
+/assets/ollama-seeds/*.tar
+/images/rootfs/opt/buddy-os/seeds/*.tar.gz
+/images/rootfs/opt/buddy-os/seeds/*.tar
+/build/*.tar.gz
+/build/*.iso
+/build/ollama_seed/
