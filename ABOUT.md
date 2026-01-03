@@ -35,11 +35,21 @@ If a new chat is started, this file is the source of truth.
    - Minimal idle CPU/RAM usage; avoid heavy background services.
 
 5. **Model Strategy**
-   - Default local model: **GPT-Neo** (always available offline baseline).
-   - Optional integrations:
-     - OpenAI API (user-provided key)
-     - Ollama / Ollama Cloud Pro (user selects from pulled models)
+   - Offline-first default: **Ollama Local (seeded) / qwen3-vl:2b** (available out of the box).
+   - Buddy uses **exactly two active models**:
+     - **Desktop Agent** (everyday OS tasks)
+     - **Dev Agent** (coding/dev tasks)
+   - Optional integrations (user-configured in Settings):
+     - Ollama Cloud
+     - OpenAI
+     - Gemini
+     - Claude
+     - Grok
    - Security model never changes with model choice: permissions are enforced by Buddy-OS.
+
+   **Distribution rule:** large model seed artifacts must never be committed to git.
+   - Repo stores only manifests + sha256.
+   - Seed tarballs are hosted externally and fetched during build.
 
 6. **Final Deliverable**
    - A **Ventoy-bootable ISO** for installation.
@@ -69,7 +79,7 @@ If a new chat is started, this file is the source of truth.
   - Access preset (Restricted / Helpful / Power User / Admin)
   - Consent matrix (per category)
   - Folder allowlist/blacklist/no-memory zones
-  - Integrations + auth (OpenAI/Ollama/email accounts later)
+  - Integrations + auth (providers, logins, keys)
   - Audit controls (log verbosity, export)
 
 ---
