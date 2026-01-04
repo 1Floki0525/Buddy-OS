@@ -192,3 +192,12 @@ The Buddy AI broker now supports full system automation through the following ac
 - System command execution with full privileges
 
 These capabilities enable Buddy AI to perform any development task a human could do, while keeping the user in control through the policy system.
+## Buddy Dev Console
+
+The Buddy Dev Console is a GUI application that provides a shared terminal-like interface for user and Buddy AI. It is positioned in the **bottom-right corner** of the desktop and provides the following features:
+
+- Real-time command execution logs.
+- Live previews of GUI actions (e.g., mouse clicks, window focus).
+- User intervention controls (pause, cancel, modify).
+
+This app allows users to observe Buddy’s actions in real-time and intervene if needed, ensuring full control over the autonomous development process.
