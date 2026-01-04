@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=Buddy-OS
+Description=Buddy-OS boot splash
+ModuleName=script
+
+[script]
+ImageDir=.
+ScriptFile=buddy-os.script

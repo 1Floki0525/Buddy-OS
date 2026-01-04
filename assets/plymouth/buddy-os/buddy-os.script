@@ -1,0 +1,76 @@
+wallpaper = Image("background.png");
+screen_width = Window.GetWidth();
+screen_height = Window.GetHeight();
+
+ref_width = 1536.0;
+ref_height = 1024.0;
+scale_w = screen_width / ref_width;
+scale_h = screen_height / ref_height;
+
+bg = wallpaper.Scale(screen_width, screen_height);
+bg_sprite = Sprite(bg);
+bg_sprite.SetX(0);
+bg_sprite.SetY(0);
+
+bar_left = 384 * scale_w;
+bar_top = 820 * scale_h;
+bar_width = (1152 - 384) * scale_w;
+bar_height = (900 - 820) * scale_h;
+
+bar_bg = Image("bar_bg.png").Scale(bar_width, bar_height);
+bar_fill = Image("bar_fill.png").Scale(bar_width, bar_height);
+
+bar_bg_sprite = Sprite(bar_bg);
+bar_bg_sprite.SetX(bar_left);
+bar_bg_sprite.SetY(bar_top);
+
+bar_fill_sprite = Sprite(bar_fill);
+bar_fill_sprite.SetX(bar_left);
+bar_fill_sprite.SetY(bar_top);
+bar_fill_sprite.SetClipRect(0, 0, 0, bar_height);
+
+shimmer_width = bar_width * 0.18;
+bar_shimmer = Image("bar_shimmer.png").Scale(shimmer_width, bar_height);
+bar_shimmer_sprite = Sprite(bar_shimmer);
+bar_shimmer_sprite.SetX(bar_left);
+bar_shimmer_sprite.SetY(bar_top);
+bar_shimmer_sprite.SetOpacity(0);
+
+current_progress = 0;
+
+fun progress_callback(progress) {
+  if (progress < 0) progress = 0;
+  if (progress > 1) progress = 1;
+  current_progress = progress;
+  bar_fill_sprite.SetClipRect(0, 0, bar_width * progress, bar_height);
+}
+
+fun refresh_callback() {
+  fill_width = bar_width * current_progress;
+  if (fill_width <= shimmer_width) {
+    bar_shimmer_sprite.SetOpacity(0);
+    return;
+  }
+
+  shimmer_pos = fill_width - (shimmer_width * 0.7);
+  if (shimmer_pos < 0) {
+    shimmer_pos = 0;
+  }
+
+  bar_shimmer_sprite.SetOpacity(0.6);
+  bar_shimmer_sprite.SetX(bar_left + shimmer_pos);
+
+  if (shimmer_pos < 0) {
+    visible = shimmer_width + shimmer_pos;
+    bar_shimmer_sprite.SetClipRect(-shimmer_pos, 0, visible, bar_height);
+  } else if (shimmer_pos + shimmer_width > fill_width) {
+    visible = fill_width - shimmer_pos;
+    if (visible < 0) visible = 0;
+    bar_shimmer_sprite.SetClipRect(0, 0, visible, bar_height);
+  } else {
+    bar_shimmer_sprite.SetClipRect(0, 0, shimmer_width, bar_height);
+  }
+}
+
+Plymouth.SetBootProgressFunction(progress_callback);
+Plymouth.SetRefreshFunction(refresh_callback);
