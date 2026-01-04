@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
+OUT_DIR="${ROOT_DIR}/build/snaps"
+
+mkdir -p "${OUT_DIR}"
+
+build_snap() {
+  local snap_dir="$1"
+  local name="$2"
+  echo "== Building ${name} =="
+  (cd "${snap_dir}" && snapcraft --destructive-mode)
+  mv -f "${snap_dir}"/*.snap "${OUT_DIR}/"
+}
+
+build_snap "${ROOT_DIR}/snaps/buddy-gadget/snap" "buddy-gadget"
+build_snap "${ROOT_DIR}/snaps/buddy-core/snap" "buddy-core"
+
+echo "OK: snaps in ${OUT_DIR}"
