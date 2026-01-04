@@ -8,7 +8,17 @@ ROOT_DIR="/workspace"
 OUT_DIR="${ROOT_DIR}/build/iso"
 WORK_DIR="${ROOT_DIR}/build/iso_work"
 
-mkdir -p "${OUT_DIR}" "${WORK_DIR}"
+mkdir -p "${OUT_DIR}"
+
+if [ -d "${WORK_DIR}" ]; then
+  echo "== Cleaning ISO work dir =="
+  findmnt -rn -o TARGET | awk -v base="${WORK_DIR}" '$0 ~ "^" base {print}' | sort -r | while read -r m; do
+    umount -lf "${m}" || true
+  done
+  rm -rf "${WORK_DIR}"
+fi
+
+mkdir -p "${WORK_DIR}"
 
 export LIVE_BUILD=/usr/share/livecd-rootfs/live-build
 export PROJECT=ubuntu
