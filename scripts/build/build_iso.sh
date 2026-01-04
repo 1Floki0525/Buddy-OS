@@ -36,6 +36,7 @@ if [ -f config/lb_chroot_layered ]; then
     print;
   }' config/lb_chroot_layered > config/lb_chroot_layered.tmp
   mv config/lb_chroot_layered.tmp config/lb_chroot_layered
+  chmod +x config/lb_chroot_layered
 fi
 
 # Inject Buddy-OS overlays into the generated config
