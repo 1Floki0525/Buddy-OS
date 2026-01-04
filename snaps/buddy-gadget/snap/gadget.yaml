@@ -9,12 +9,6 @@ volumes:
         filesystem: vfat
         filesystem-label: system-boot
         role: system-boot
-      - name: system-save
-        type: 0FC63DAF-8483-4772-8E79-3D69D8477DE4
-        size: 256M
-        filesystem: ext4
-        filesystem-label: system-save
-        role: system-save
       - name: writable
         type: 0FC63DAF-8483-4772-8E79-3D69D8477DE4
         size: 8G
