@@ -3,6 +3,11 @@ set -euo pipefail
 
 echo "== Buddy-OS COSMIC hook =="
 
+if [ -f /etc/apt/sources.list.d/ubuntu.sources ]; then
+  sed -i 's/^Components: .*/Components: main restricted universe multiverse/' \
+    /etc/apt/sources.list.d/ubuntu.sources
+fi
+
 apt-get update
 
 echo "Installing COSMIC and installer packages from seed list"

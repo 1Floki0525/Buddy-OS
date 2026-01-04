@@ -18,6 +18,7 @@ export SUITE=noble
 export FLAVOUR=ubuntu
 export SUBPROJECT=
 export SNAP_NO_VALIDATE_SEED=1
+export LOCALE_SUPPORT=none
 
 cd "${WORK_DIR}"
 
