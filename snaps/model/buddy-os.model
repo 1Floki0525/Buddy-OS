@@ -5,6 +5,7 @@ brand-id: 6bqheik7V7grxu9ck2qyUlGbUsMDvkx9
 model: buddy-os-000
 architecture: amd64
 base: core24
+distribution: ubuntu
 grade: dangerous
 classic: true
 
