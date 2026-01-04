@@ -17,6 +17,4 @@ parts:
     plugin: dump
     source: ../../../snaps/_src/buddy-settings
     stage:
-      - snaps/buddy-settings/bin/buddy-settings
-    organize:
-      snaps/buddy-settings/bin/: bin/
+      - bin/buddy-settings

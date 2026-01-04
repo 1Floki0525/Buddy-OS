@@ -19,13 +19,16 @@ mkdir -p "${SRC_DIR}/buddy-core/bin" "${SRC_DIR}/buddy-core/snaps/buddy-core/bin
 cp -f "${ROOT_DIR}/snaps/buddy-core/bin/"* "${SRC_DIR}/buddy-core/bin/"
 cp -f "${ROOT_DIR}/snaps/buddy-core/bin/"* "${SRC_DIR}/buddy-core/snaps/buddy-core/bin/"
 
-mkdir -p "${SRC_DIR}/buddy-voice/snaps/buddy-voice/bin"
+mkdir -p "${SRC_DIR}/buddy-voice/bin" "${SRC_DIR}/buddy-voice/snaps/buddy-voice/bin"
+cp -f "${ROOT_DIR}/snaps/buddy-voice/bin/buddy-voice" "${SRC_DIR}/buddy-voice/bin/"
 cp -f "${ROOT_DIR}/snaps/buddy-voice/bin/buddy-voice" "${SRC_DIR}/buddy-voice/snaps/buddy-voice/bin/"
 
-mkdir -p "${SRC_DIR}/buddy-settings/snaps/buddy-settings/bin"
+mkdir -p "${SRC_DIR}/buddy-settings/bin" "${SRC_DIR}/buddy-settings/snaps/buddy-settings/bin"
+cp -f "${ROOT_DIR}/snaps/buddy-settings/bin/buddy-settings" "${SRC_DIR}/buddy-settings/bin/"
 cp -f "${ROOT_DIR}/snaps/buddy-settings/bin/buddy-settings" "${SRC_DIR}/buddy-settings/snaps/buddy-settings/bin/"
 
-mkdir -p "${SRC_DIR}/buddy-copilot/snaps/buddy-copilot/bin"
+mkdir -p "${SRC_DIR}/buddy-copilot/bin" "${SRC_DIR}/buddy-copilot/snaps/buddy-copilot/bin"
+cp -f "${ROOT_DIR}/snaps/buddy-copilot/bin/buddy-copilot" "${SRC_DIR}/buddy-copilot/bin/"
 cp -f "${ROOT_DIR}/snaps/buddy-copilot/bin/buddy-copilot" "${SRC_DIR}/buddy-copilot/snaps/buddy-copilot/bin/"
 
 echo "OK: prepared snap sources in ${SRC_DIR}"

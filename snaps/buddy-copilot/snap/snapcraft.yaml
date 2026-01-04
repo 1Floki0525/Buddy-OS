@@ -17,6 +17,4 @@ parts:
     plugin: dump
     source: ../../../snaps/_src/buddy-copilot
     stage:
-      - snaps/buddy-copilot/bin/buddy-copilot
-    organize:
-      snaps/buddy-copilot/bin/: bin/
+      - bin/buddy-copilot

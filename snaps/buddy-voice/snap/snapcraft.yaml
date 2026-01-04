@@ -19,6 +19,4 @@ parts:
     plugin: dump
     source: ../../../snaps/_src/buddy-voice
     stage:
-      - snaps/buddy-voice/bin/buddy-voice
-    organize:
-      snaps/buddy-voice/bin/: bin/
+      - bin/buddy-voice
