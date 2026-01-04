@@ -201,3 +201,14 @@ The Buddy Dev Console is a GUI application that provides a shared terminal-like 
 - User intervention controls (pause, cancel, modify).
 
 This app allows users to observe Buddy’s actions in real-time and intervene if needed, ensuring full control over the autonomous development process.
+## Voice Activation Service
+
+The Buddy Voice service is a background daemon that continuously listens for the "Hey Buddy" wake word and transcribes spoken commands to text. It uses the Vosk speech recognition engine for offline, real-time speech-to-text.
+
+Key features:
+
+- Wake word detection for "Hey Buddy".
+- Real-time speech-to-text transcription.
+- Integration with Buddy Copilot for command execution.
+
+This service enables users to control Buddy AI via voice, making it a truly autonomous assistant.
