@@ -10,6 +10,7 @@ build_snap() {
   local snap_dir="$1"
   local name="$2"
   echo "== Building ${name} =="
+  (cd "${snap_dir}" && snapcraft clean)
   (cd "${snap_dir}" && snapcraft --destructive-mode)
   mv -f "${snap_dir}"/*.snap "${OUT_DIR}/"
 }
