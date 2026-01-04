@@ -72,5 +72,5 @@ with open(model_json, "w", encoding="utf-8") as f:
     json.dump(data, fp=f, indent=2)
 PY
 
-snap sign -k "${KEY_NAME}" --update-timestamp --chain "${MODEL_JSON}" > "${OUT_FILE}"
+snap sign -k "${KEY_NAME}" --update-timestamp --chain < "${MODEL_JSON}" > "${OUT_FILE}"
 echo "OK: wrote ${OUT_FILE}"
