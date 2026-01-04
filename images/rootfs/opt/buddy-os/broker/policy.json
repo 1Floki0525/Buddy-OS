@@ -1,36 +1,18 @@
 {
-  "version": "1.0",
-  "access_preset": "restricted",
+  "access_preset": "admin",
   "allow_mode": "blacklist",
-  "allowlist": [],
-  "blacklist": [
-    "/proc",
-    "/sys",
-    "/dev",
-    "/home/binary-god/.ssh",
-    "/home/binary-god/.gnupg"
-  ],
-  "no_memory_zones": [
-    "/home/binary-god/.ssh",
-    "/home/binary-god/.gnupg"
-  ],
-  "capabilities": {
-    "screen_control": true,
-    "system_admin": true,
-    "docker_control": true,
-    "network_admin": true
-  },
+  "allowlist": ["/"],
+  "blacklist": ["/proc", "/sys", "/dev"],
   "consent": {
-    "mkdir": "ask",
-    "write_file": "ask",
-    "list_dir": "ask",
+    "launch_app": "allow",
+    "list_dir": "allow",
+    "mkdir": "allow",
     "open_url": "allow",
-    "launch_app": "ask",
-    "shell": "deny",
-    "screen_control": "ask"
+    "shell": "allow",
+    "write_file": "allow",
+    "screen_control": "allow"
   },
   "re_auth_required": {
-    "system_admin": true,
-    "shell": true
+    "system_admin": true
   }
 }

@@ -180,3 +180,15 @@ The Buddy Copilot GUI app is a chat interface for interacting with the Buddy AI 
 - Scrollable log area to display live task progress.
 
 This app allows users to interact with Buddy AI via text or voice, while watching tasks execute on-screen in real-time.
+## Enhanced Broker Capabilities
+
+The Buddy AI broker now supports full system automation through the following actions:
+
+- Screen capture (full screen and specific windows)
+- Mouse control (move, click)
+- Keyboard control (type, press keys)
+- Window management (find, focus, screenshot)
+- Application control (launch, close)
+- System command execution with full privileges
+
+These capabilities enable Buddy AI to perform any development task a human could do, while keeping the user in control through the policy system.
