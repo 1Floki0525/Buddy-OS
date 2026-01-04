@@ -7,7 +7,6 @@ set -euo pipefail
 apt-get update
 apt-get install -y --no-install-recommends \
   livecd-rootfs \
-  ubuntu-cdimage \
   germinate \
   xorriso \
   squashfs-tools \
@@ -16,6 +15,16 @@ apt-get install -y --no-install-recommends \
   casper \
   debootstrap \
   rsync \
-  jq
+  jq \
+  git \
+  ca-certificates \
+  python3 \
+  make
+
+if [[ ! -d /opt/ubuntu-cdimage/.git ]]; then
+  git clone https://git.launchpad.net/ubuntu-cdimage /opt/ubuntu-cdimage
+else
+  git -C /opt/ubuntu-cdimage pull --ff-only
+fi
 
 echo "OK: ISO toolchain installed"
