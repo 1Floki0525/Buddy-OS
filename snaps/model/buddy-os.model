@@ -1,0 +1,27 @@
+type: model
+authority-id: 6bqheik7V7grxu9ck2qyUlGbUsMDvkx9
+series: 16
+brand-id: 6bqheik7V7grxu9ck2qyUlGbUsMDvkx9
+model: buddy-os-0.0.0
+architecture: amd64
+base: core24
+grade: dangerous
+classic: true
+
+snaps:
+  - name: snapd
+    type: snapd
+  - name: core24
+    type: base
+  - name: pc-kernel
+    type: kernel
+  - name: buddy-gadget
+    type: gadget
+  - name: buddy-core
+    type: app
+    channel: latest/edge
+  - name: buddy-voice
+    type: app
+    channel: latest/edge
+
+timestamp: "2026-01-03T00:00:00+00:00"

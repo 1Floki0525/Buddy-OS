@@ -16,10 +16,12 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN sed -i 's/^Components: main$/Components: main restricted universe multiverse/' /etc/apt/sources.list.d/ubuntu.sources || true \
  && apt-get update \
  && apt-get install -y --no-install-recommends \
-    ca-certificates curl wget git jq \
+    ca-certificates curl wget git jq rsync \
     python3 python3-venv python3-pip \
+    snapd \
     xorriso squashfs-tools \
     mtools dosfstools \
+    grub-pc-bin grub-efi-amd64-bin \
     qemu-utils parted e2fsprogs \
     && rm -rf /var/lib/apt/lists/*
 
