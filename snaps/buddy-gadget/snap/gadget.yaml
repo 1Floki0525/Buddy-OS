@@ -17,7 +17,7 @@ volumes:
         role: system-save
       - name: system-data
         type: 83
-        size: 100%
+        size: 8G
         filesystem: ext4
         filesystem-label: system-data
         role: system-data
