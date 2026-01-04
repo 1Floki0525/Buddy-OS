@@ -3,7 +3,7 @@ set -euo pipefail
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/../.." && pwd)"
 MODEL_FILE="${ROOT_DIR}/snaps/model/buddy-os.model"
-OUT_DIR="${ROOT_DIR}/build/model"
+OUT_DIR="${ROOT_DIR}/build/model-host"
 OUT_FILE="${OUT_DIR}/buddy-os.model.assert"
 KEY_NAME="${KEY_NAME:-buddy-os}"
 
