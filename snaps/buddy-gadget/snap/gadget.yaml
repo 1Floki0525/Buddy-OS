@@ -15,9 +15,9 @@ volumes:
         filesystem: ext4
         filesystem-label: system-save
         role: system-save
-      - name: system-data
+      - name: writable
         type: 0FC63DAF-8483-4772-8E79-3D69D8477DE4
         size: 8G
         filesystem: ext4
-        filesystem-label: system-data
+        filesystem-label: writable
         role: system-data
