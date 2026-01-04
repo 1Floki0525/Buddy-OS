@@ -34,12 +34,7 @@ def parse_value(raw):
     raw = raw.strip()
     if raw.startswith('"') and raw.endswith('"'):
         return raw[1:-1]
-    if raw in ("true", "false"):
-        return raw == "true"
-    try:
-        return int(raw)
-    except ValueError:
-        return raw
+    return raw
 
 data = {}
 snaps = []
