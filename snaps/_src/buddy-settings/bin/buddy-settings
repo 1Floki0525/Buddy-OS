@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -euo pipefail
+echo "buddy-settings: not implemented yet"
+sleep infinity
