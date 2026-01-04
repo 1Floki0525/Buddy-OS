@@ -24,6 +24,20 @@ cd "${WORK_DIR}"
 echo "== livecd-rootfs auto/config =="
 "${LIVE_BUILD}/auto/config"
 
+# Avoid snap preseed validation in environments without loop/AppArmor features.
+if [ -f config/lb_chroot_layered ]; then
+  awk '{
+    if ($0 ~ /^\tsnap_validate_seed chroot$/) {
+      print "\tif [ -z \"${SNAP_NO_VALIDATE_SEED:-}\" ]; then";
+      print "\t  snap_validate_seed chroot";
+      print "\tfi";
+      next;
+    }
+    print;
+  }' config/lb_chroot_layered > config/lb_chroot_layered.tmp
+  mv config/lb_chroot_layered.tmp config/lb_chroot_layered
+fi
+
 # Inject Buddy-OS overlays into the generated config
 mkdir -p \
   config/hooks \
