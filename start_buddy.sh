@@ -1,0 +1,1 @@
+scripts/dev/start_all_buddy.sh

@@ -1,0 +1,61 @@
+{
+  "access_preset": "restricted",
+  "allow_mode": "blacklist",
+  "allowlist": [],
+  "blacklist": [
+    "/proc",
+    "/sys",
+    "/dev",
+    "/home/binary-god/.ssh",
+    "/home/binary-god/.gnupg"
+  ],
+  "no_memory_zones": [
+    "/home/binary-god/.ssh",
+    "/home/binary-god/.gnupg"
+  ],
+  "consent": {
+    "mkdir": "ask",
+    "write_file": "ask",
+    "list_dir": "ask",
+    "open_url": "allow",
+    "launch_app": "ask",
+    "shell": "deny",
+    "screen_control": "ask"
+  },
+  "re_auth_required": {
+    "system_admin": true,
+    "shell": true
+  },
+  "providers": {
+    "default": {
+      "desktop_agent": "ollama-local",
+      "dev_agent": "ollama-local"
+    },
+    "providers": {
+      "ollama-local": {
+        "enabled": true,
+        "models": ["qwen3-vl:2b"]
+      },
+      "ollama-cloud": {
+        "enabled": false,
+        "models": []
+      },
+      "openai": {
+        "enabled": false,
+        "api_key": ""
+      },
+      "gemini": {
+        "enabled": false,
+        "api_key": ""
+      },
+      "claude": {
+        "enabled": false,
+        "api_key": ""
+      },
+      "grok": {
+        "enabled": false,
+        "api_key": ""
+      }
+    }
+  }
+}

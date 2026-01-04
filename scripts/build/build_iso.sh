@@ -88,3 +88,4 @@ if [ -f "livecd.${PROJECT}.iso" ]; then
 fi
 
 echo "OK: ISO build complete"
+LOCALE_SUPPORT=none

@@ -171,3 +171,12 @@ If future chats drift, return to this file and treat it as the spec baseline.
 
 4. Create `notes/DECISIONS.md`
    - Track key choices so we don’t lose direction across chats
+## Buddy Copilot GUI App
+
+The Buddy Copilot GUI app is a chat interface for interacting with the Buddy AI assistant. It is positioned in the **bottom-right corner** of the desktop and provides the following features:
+
+- Text input field for typing commands.
+- Voice activation button for triggering "Hey Buddy".
+- Scrollable log area to display live task progress.
+
+This app allows users to interact with Buddy AI via text or voice, while watching tasks execute on-screen in real-time.

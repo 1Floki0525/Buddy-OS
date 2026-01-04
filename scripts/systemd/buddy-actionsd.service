@@ -1,0 +1,14 @@
+[Unit]
+Description=Buddy Actions Daemon
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/home/binary-god/Buddy-OS/broker
+ExecStart=/usr/bin/python3 /home/binary-god/Buddy-OS/broker/buddy_actionsd.py
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target

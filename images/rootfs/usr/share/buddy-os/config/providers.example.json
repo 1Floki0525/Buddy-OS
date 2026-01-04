@@ -1,0 +1,32 @@
+{
+  "default": {
+    "desktop_agent": "ollama-local",
+    "dev_agent": "ollama-local"
+  },
+  "providers": {
+    "ollama-local": {
+      "enabled": true,
+      "models": ["qwen3-vl:2b"]
+    },
+    "ollama-cloud": {
+      "enabled": false,
+      "models": []
+    },
+    "openai": {
+      "enabled": false,
+      "api_key": ""
+    },
+    "gemini": {
+      "enabled": false,
+      "api_key": ""
+    },
+    "claude": {
+      "enabled": false,
+      "api_key": ""
+    },
+    "grok": {
+      "enabled": false,
+      "api_key": ""
+    }
+  }
+}

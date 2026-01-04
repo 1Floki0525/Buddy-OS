@@ -5,8 +5,8 @@ After=network.target
 [Service]
 Type=simple
 User=root
-WorkingDirectory=/opt/buddy-os/buddy-voice
-ExecStart=/usr/bin/python3 /opt/buddy-os/buddy-voice/buddy_voice.py
+WorkingDirectory=/home/binary-god/Buddy-OS/buddy-voice
+ExecStart=/usr/bin/python3 /home/binary-god/Buddy-OS/buddy-voice/buddy_voice.py
 Restart=always
 RestartSec=3
 

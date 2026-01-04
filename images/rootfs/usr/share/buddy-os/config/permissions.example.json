@@ -1,0 +1,61 @@
+{
+  "access_presets": {
+    "restricted": {
+      "description": "Buddy can chat and explain, but cannot modify system or files except in Buddy workspace.",
+      "consent_rules": {
+        "mkdir": "ask",
+        "write_file": "ask",
+        "list_dir": "ask",
+        "open_url": "allow",
+        "launch_app": "ask",
+        "shell": "deny",
+        "screen_control": "ask"
+      }
+    },
+    "helpful": {
+      "description": "Buddy can read/write in allowlisted folders, launch apps, open URLs, and use limited browser automation.",
+      "consent_rules": {
+        "mkdir": "allow",
+        "write_file": "allow",
+        "list_dir": "allow",
+        "open_url": "allow",
+        "launch_app": "allow",
+        "shell": "ask",
+        "screen_control": "ask"
+      }
+    },
+    "power_user": {
+      "description": "Buddy has broad access to user home except blacklist, can run developer workflows, and browser automation.",
+      "consent_rules": {
+        "mkdir": "allow",
+        "write_file": "allow",
+        "list_dir": "allow",
+        "open_url": "allow",
+        "launch_app": "allow",
+        "shell": "allow",
+        "screen_control": "allow"
+      }
+    },
+    "admin": {
+      "description": "Buddy can do everything a user can do, including privileged actions, but still gated by consent + re-auth rules.",
+      "consent_rules": {
+        "mkdir": "allow",
+        "write_file": "allow",
+        "list_dir": "allow",
+        "open_url": "allow",
+        "launch_app": "allow",
+        "shell": "allow",
+        "screen_control": "allow"
+      }
+    }
+  },
+  "folder_controls": {
+    "modes": [
+      "allowlist",
+      "blacklist"
+    ],
+    "allowlist": [],
+    "blacklist": []
+  },
+  "no_memory_zones": []
+}

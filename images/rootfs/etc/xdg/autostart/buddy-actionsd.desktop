@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Buddy Actions Daemon
+Comment=Action execution daemon for Buddy-OS
+Exec=python3 /opt/buddy-os/broker/buddy_actionsd.py
+Icon=buddy-ai
+Terminal=false
+Categories=Utility;AI;
+X-GNOME-Autostart-enabled=true

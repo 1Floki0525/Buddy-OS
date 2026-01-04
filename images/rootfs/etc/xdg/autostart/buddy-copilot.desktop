@@ -1,8 +1,9 @@
 [Desktop Entry]
+Type=Application
 Name=Buddy Copilot
 Comment=AI Assistant for Buddy-OS
 Exec=python3 /opt/buddy-os/buddy-copilot/buddy_copilot.py
 Icon=buddy-ai
 Terminal=false
-Type=Application
 Categories=Utility;AI;
+X-GNOME-Autostart-enabled=true

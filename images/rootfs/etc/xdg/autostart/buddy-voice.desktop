@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Buddy Voice Service
+Comment=Voice activation service for Buddy-OS
+Exec=python3 /opt/buddy-os/buddy-voice/buddy_voice.py
+Icon=buddy-ai
+Terminal=false
+Categories=Utility;AI;
+X-GNOME-Autostart-enabled=true

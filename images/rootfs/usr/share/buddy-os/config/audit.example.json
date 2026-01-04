@@ -1,0 +1,7 @@
+{
+  "enabled": true,
+  "max_entries": 1000,
+  "redact_sensitive": true,
+  "log_level": "info",
+  "storage_path": "/var/log/buddy-audit.log"
+}
