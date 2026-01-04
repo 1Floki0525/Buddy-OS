@@ -233,3 +233,6 @@ Key features:
 - Text-to-speech responses with Piper (male/female voices).
 
 This service enables users to control Buddy AI via voice, making it a truly autonomous assistant.
+## Buddy Copilot GUI Integration
+
+The Buddy Copilot GUI is now integrated with the broker API (`localhost:8765/execute`), allowing users to send commands directly from the chat interface. The GUI displays real-time command execution logs and live previews of GUI actions, ensuring full transparency and control.

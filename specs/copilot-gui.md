@@ -23,3 +23,6 @@ The app is positioned in the **bottom-right corner** of the desktop. This allows
 - Add a **terminal widget** for shared dev console.
 - Integrate with **Accessibility APIs** for screen observation.
 - Add **error handling** and **feedback** mechanisms.
+## Integration with Broker API
+
+The Buddy Copilot GUI is integrated with the broker API (`localhost:8765/execute`) to send commands and receive real-time updates. The GUI displays command execution logs and live previews of GUI actions, ensuring full transparency and control.
