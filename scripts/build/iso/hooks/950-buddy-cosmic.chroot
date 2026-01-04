@@ -7,6 +7,10 @@ if [ -f /etc/apt/sources.list.d/ubuntu.sources ]; then
   sed -i 's/^Components: .*/Components: main restricted universe multiverse/' \
     /etc/apt/sources.list.d/ubuntu.sources
 fi
+if [ -f /etc/apt/sources.list ]; then
+  sed -i 's/ main restricted$/ main restricted universe multiverse/' /etc/apt/sources.list
+  sed -i 's/ main$/ main universe/' /etc/apt/sources.list
+fi
 
 apt-get update
 
