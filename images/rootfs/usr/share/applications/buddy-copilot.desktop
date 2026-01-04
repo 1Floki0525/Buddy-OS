@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Buddy Copilot
+Comment=Assistant
+Exec=/opt/buddy-os/bin/buddy-copilot
+Icon=buddy-ai
+Categories=Utility;System;
+Keywords=Buddy;AI;Assistant;Copilot;
+StartupNotify=true

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Buddy AI Settings
+Comment=Settings
+Exec=/opt/buddy-os/bin/buddy-settings
+Icon=buddy-ai
+Categories=Settings;System;
+Keywords=Buddy;AI;Assistant;Permissions;Providers;
+StartupNotify=true
