@@ -1,0 +1,22 @@
+name: buddy-settings
+base: core24
+version: '0.1'
+summary: Buddy-OS settings UI
+description: |
+  COSMIC settings integration for Buddy AI.
+
+grade: devel
+confinement: classic
+
+apps:
+  buddy-settings:
+    command: bin/buddy-settings
+
+parts:
+  buddy-settings:
+    plugin: dump
+    source: ../..
+    stage:
+      - snaps/buddy-settings/bin/buddy-settings
+    organize:
+      snaps/buddy-settings/bin/: bin/

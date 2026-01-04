@@ -16,5 +16,8 @@ build_snap() {
 
 build_snap "${ROOT_DIR}/snaps/buddy-gadget/snap" "buddy-gadget"
 build_snap "${ROOT_DIR}/snaps/buddy-core/snap" "buddy-core"
+build_snap "${ROOT_DIR}/snaps/buddy-voice/snap" "buddy-voice"
+build_snap "${ROOT_DIR}/snaps/buddy-settings/snap" "buddy-settings"
+build_snap "${ROOT_DIR}/snaps/buddy-copilot/snap" "buddy-copilot"
 
 echo "OK: snaps in ${OUT_DIR}"

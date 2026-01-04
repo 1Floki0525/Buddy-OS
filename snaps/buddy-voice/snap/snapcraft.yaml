@@ -1,0 +1,24 @@
+name: buddy-voice
+base: core24
+version: '0.1'
+summary: Buddy-OS voice wake service
+description: |
+  Always-on voice service for wake word detection and ASR.
+
+grade: devel
+confinement: classic
+
+apps:
+  buddy-voice:
+    command: bin/buddy-voice
+    daemon: simple
+    restart-condition: on-failure
+
+parts:
+  buddy-voice:
+    plugin: dump
+    source: ../..
+    stage:
+      - snaps/buddy-voice/bin/buddy-voice
+    organize:
+      snaps/buddy-voice/bin/: bin/

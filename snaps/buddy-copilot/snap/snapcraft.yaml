@@ -1,0 +1,22 @@
+name: buddy-copilot
+base: core24
+version: '0.1'
+summary: Buddy-OS copilot tray UI
+description: |
+  Tray-style Buddy Copilot UI with always-visible input.
+
+grade: devel
+confinement: classic
+
+apps:
+  buddy-copilot:
+    command: bin/buddy-copilot
+
+parts:
+  buddy-copilot:
+    plugin: dump
+    source: ../..
+    stage:
+      - snaps/buddy-copilot/bin/buddy-copilot
+    organize:
+      snaps/buddy-copilot/bin/: bin/

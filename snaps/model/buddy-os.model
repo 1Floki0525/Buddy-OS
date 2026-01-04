@@ -23,5 +23,11 @@ snaps:
   - name: buddy-voice
     type: app
     channel: latest/edge
+  - name: buddy-settings
+    type: app
+    channel: latest/edge
+  - name: buddy-copilot
+    type: app
+    channel: latest/edge
 
 timestamp: "2026-01-03T00:00:00+00:00"
