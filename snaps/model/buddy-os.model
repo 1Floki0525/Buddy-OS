@@ -2,7 +2,7 @@ type: model
 authority-id: 6bqheik7V7grxu9ck2qyUlGbUsMDvkx9
 series: 16
 brand-id: 6bqheik7V7grxu9ck2qyUlGbUsMDvkx9
-model: buddy-os-0.0.0
+model: buddy-os-000
 architecture: amd64
 base: core24
 grade: dangerous
