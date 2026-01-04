@@ -3,6 +3,10 @@
 This outline captures the current blockers and the concrete fixes to get a
 COSMIC + Buddy AI installer ISO building cleanly.
 
+Operator rule (important):
+- Do NOT run the build automatically. Provide commands only.
+- The user will execute the build once fixes are applied.
+
 ## Current Blockers and Fixes
 
 1) Snap preseed loop device failures
