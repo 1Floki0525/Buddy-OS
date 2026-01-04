@@ -8,7 +8,8 @@ mkdir -p \
   "${OVERLAY_DIR}/usr/share/plymouth/themes/buddy-os" \
   "${OVERLAY_DIR}/usr/share/icons/hicolor/256x256/apps" \
   "${OVERLAY_DIR}/usr/share/applications" \
-  "${OVERLAY_DIR}/etc/plymouth"
+  "${OVERLAY_DIR}/etc/plymouth" \
+  "${OVERLAY_DIR}/etc/systemd/system-preset"
 
 cp -f "${ROOT_DIR}/assets/plymouth/buddy-os/"* \
   "${OVERLAY_DIR}/usr/share/plymouth/themes/buddy-os/"
@@ -23,6 +24,10 @@ cat > "${OVERLAY_DIR}/etc/plymouth/plymouthd.conf" <<'EOF'
 [Daemon]
 Theme=buddy-os
 ShowDelay=0
+EOF
+
+cat > "${OVERLAY_DIR}/etc/systemd/system-preset/90-buddy-os.preset" <<'EOF'
+enable buddy-voice.service
 EOF
 
 echo "OK: synced rootfs overlay assets"
