@@ -26,9 +26,9 @@ parts:
       - lib/buddy/buddy_cli.py
       - lib/broker/buddy_actionsd.py
       - etc/buddy/policy.json
-      - snaps/buddy-core/bin/*
+      - bin/buddy-cli
+      - bin/buddy-actionsd
     organize:
       buddy/buddy_cli.py: lib/buddy/buddy_cli.py
       broker/buddy_actionsd.py: lib/broker/buddy_actionsd.py
       broker/policy.json: etc/buddy/policy.json
-      snaps/buddy-core/bin/: bin/
