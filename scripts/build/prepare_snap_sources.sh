@@ -11,9 +11,10 @@ mkdir -p \
   "${SRC_DIR}/buddy-settings" \
   "${SRC_DIR}/buddy-copilot"
 
-cp -f "${ROOT_DIR}/buddy/buddy_cli.py" "${SRC_DIR}/buddy-core/"
-cp -f "${ROOT_DIR}/broker/buddy_actionsd.py" "${SRC_DIR}/buddy-core/"
-cp -f "${ROOT_DIR}/broker/policy.json" "${SRC_DIR}/buddy-core/"
+mkdir -p "${SRC_DIR}/buddy-core/buddy" "${SRC_DIR}/buddy-core/broker"
+cp -f "${ROOT_DIR}/buddy/buddy_cli.py" "${SRC_DIR}/buddy-core/buddy/"
+cp -f "${ROOT_DIR}/broker/buddy_actionsd.py" "${SRC_DIR}/buddy-core/broker/"
+cp -f "${ROOT_DIR}/broker/policy.json" "${SRC_DIR}/buddy-core/broker/"
 mkdir -p "${SRC_DIR}/buddy-core/snaps/buddy-core/bin"
 cp -f "${ROOT_DIR}/snaps/buddy-core/bin/"* "${SRC_DIR}/buddy-core/snaps/buddy-core/bin/"
 
