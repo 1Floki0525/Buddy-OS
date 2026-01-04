@@ -37,6 +37,22 @@ if [ -f config/lb_chroot_layered ]; then
   }' config/lb_chroot_layered > config/lb_chroot_layered.tmp
   mv config/lb_chroot_layered.tmp config/lb_chroot_layered
   chmod +x config/lb_chroot_layered
+
+  awk '{
+    if ($0 ~ /^\t# Copying includes from pass subdirectory$/) {
+      print;
+      print "\t# Always apply generic includes if present";
+      print "\tif [ -d config/includes.chroot ]; then";
+      print "\t\tcd config/includes.chroot";
+      print "\t\tfind . | cpio -dmpu --no-preserve-owner \"${OLDPWD}\"/chroot";
+      print "\t\tcd \"${OLDPWD}\"";
+      print "\tfi";
+      next;
+    }
+    print;
+  }' config/lb_chroot_layered > config/lb_chroot_layered.tmp
+  mv config/lb_chroot_layered.tmp config/lb_chroot_layered
+  chmod +x config/lb_chroot_layered
 fi
 
 # Inject Buddy-OS overlays into the generated config
