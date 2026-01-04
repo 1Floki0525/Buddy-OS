@@ -23,12 +23,12 @@ parts:
     plugin: dump
     source: ../../../snaps/_src/buddy-core
     stage:
-      - buddy/buddy_cli.py
-      - broker/buddy_actionsd.py
-      - broker/policy.json
+      - buddy_cli.py
+      - buddy_actionsd.py
+      - policy.json
       - snaps/buddy-core/bin/*
     organize:
-      buddy/buddy_cli.py: lib/buddy/buddy_cli.py
-      broker/buddy_actionsd.py: lib/broker/buddy_actionsd.py
-      broker/policy.json: etc/buddy/policy.json
+      buddy_cli.py: lib/buddy/buddy_cli.py
+      buddy_actionsd.py: lib/broker/buddy_actionsd.py
+      policy.json: etc/buddy/policy.json
       snaps/buddy-core/bin/: bin/
