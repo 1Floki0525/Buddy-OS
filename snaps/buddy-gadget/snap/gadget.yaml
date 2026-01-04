@@ -4,7 +4,7 @@ volumes:
     bootloader: grub
     structure:
       - name: system-boot
-        type: 0C
+        type: 0xEF00
         size: 512M
         filesystem: vfat
         filesystem-label: system-boot
