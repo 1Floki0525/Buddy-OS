@@ -15,6 +15,7 @@ mkdir -p "${OUT_DIR}"
 
 echo "== Building Ubuntu Core image =="
 ubuntu-image snap \
+  --classic \
   --output-dir "${OUT_DIR}" \
   "${MODEL_ASSERT}"
 
