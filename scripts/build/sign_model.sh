@@ -20,10 +20,15 @@ if ! snap keys | rg -q "${KEY_NAME}"; then
   exit 1
 fi
 
-python3 - <<'PY' > "${OUT_DIR}/buddy-os.model.json"
-import json
+MODEL_JSON="${OUT_DIR}/buddy-os.model.json"
+MODEL_PATH="${MODEL_FILE}"
 
-model_path = "${MODEL_FILE}"
+MODEL_PATH="${MODEL_FILE}" MODEL_JSON="${MODEL_JSON}" python3 - <<'PY'
+import json
+import os
+
+model_path = os.environ["MODEL_PATH"]
+model_json = os.environ["MODEL_JSON"]
 
 def parse_value(raw):
     raw = raw.strip()
@@ -68,8 +73,9 @@ with open(model_path, "r", encoding="utf-8") as f:
                 current[k.strip()] = parse_value(v)
 
 data["snaps"] = snaps
-json.dump(data, fp=open("${OUT_DIR}/buddy-os.model.json", "w", encoding="utf-8"), indent=2)
+with open(model_json, "w", encoding="utf-8") as f:
+    json.dump(data, fp=f, indent=2)
 PY
 
-snap sign -k "${KEY_NAME}" --update-timestamp --chain "${OUT_DIR}/buddy-os.model.json" > "${OUT_FILE}"
+snap sign -k "${KEY_NAME}" --update-timestamp --chain "${MODEL_JSON}" > "${OUT_FILE}"
 echo "OK: wrote ${OUT_FILE}"
