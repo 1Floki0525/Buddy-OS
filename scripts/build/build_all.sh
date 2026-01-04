@@ -17,7 +17,12 @@ run_step() {
 run_step "Sync rootfs overlay" "${ROOT_DIR}/scripts/build/sync_rootfs_overlay.sh"
 run_step "Prepare snap sources" "${ROOT_DIR}/scripts/build/prepare_snap_sources.sh"
 run_step "Build snaps" "${ROOT_DIR}/scripts/build/build_snaps.sh"
-run_step "Sign model" "${ROOT_DIR}/scripts/build/sign_model.sh"
+if [[ "${SKIP_SIGN:-0}" == "1" ]]; then
+  echo "== Sign model ==\nSkipped (SKIP_SIGN=1)" | tee -a "${LOG_FILE}"
+  echo | tee -a "${LOG_FILE}"
+else
+  run_step "Sign model" "${ROOT_DIR}/scripts/build/sign_model.sh"
+fi
 run_step "Build Core image" "${ROOT_DIR}/scripts/build/build_core_image.sh"
 
 echo "OK: build complete, log at ${LOG_FILE}" | tee -a "${LOG_FILE}"
