@@ -10,13 +10,13 @@ volumes:
         filesystem-label: system-boot
         role: system-boot
       - name: system-save
-        type: 83
+        type: 0FC63DAF-8483-4772-8E79-3D69D8477DE4
         size: 256M
         filesystem: ext4
         filesystem-label: system-save
         role: system-save
       - name: system-data
-        type: 83
+        type: 0FC63DAF-8483-4772-8E79-3D69D8477DE4
         size: 8G
         filesystem: ext4
         filesystem-label: system-data
