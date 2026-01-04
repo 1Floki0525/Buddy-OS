@@ -15,7 +15,7 @@ apps:
 parts:
   buddy-copilot:
     plugin: dump
-    source: ../../..
+    source: ../../../snaps/_src/buddy-copilot
     stage:
       - snaps/buddy-copilot/bin/buddy-copilot
     organize:

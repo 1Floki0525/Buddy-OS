@@ -21,7 +21,7 @@ apps:
 parts:
   buddy-core:
     plugin: dump
-    source: ../../..
+    source: ../../../snaps/_src/buddy-core
     stage:
       - buddy/buddy_cli.py
       - broker/buddy_actionsd.py

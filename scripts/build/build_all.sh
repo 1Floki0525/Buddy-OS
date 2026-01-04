@@ -15,6 +15,7 @@ run_step() {
 }
 
 run_step "Sync rootfs overlay" "${ROOT_DIR}/scripts/build/sync_rootfs_overlay.sh"
+run_step "Prepare snap sources" "${ROOT_DIR}/scripts/build/prepare_snap_sources.sh"
 run_step "Build snaps" "${ROOT_DIR}/scripts/build/build_snaps.sh"
 run_step "Sign model" "${ROOT_DIR}/scripts/build/sign_model.sh"
 run_step "Build Core image" "${ROOT_DIR}/scripts/build/build_core_image.sh"

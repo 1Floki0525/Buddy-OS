@@ -17,7 +17,7 @@ apps:
 parts:
   buddy-voice:
     plugin: dump
-    source: ../../..
+    source: ../../../snaps/_src/buddy-voice
     stage:
       - snaps/buddy-voice/bin/buddy-voice
     organize:
