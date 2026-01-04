@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "== Buddy-OS COSMIC hook =="
+
+apt-get update
+
+echo "Installing COSMIC and installer packages from seed list"
+apt-get install -y $(cat /usr/share/buddy-os/package-lists/buddy-cosmic.list.chroot)
+
+if ! command -v flatpak >/dev/null 2>&1; then
+  apt-get install -y flatpak
+fi
+
+# Remove default GNOME desktop stack.
+apt-get purge -y ubuntu-desktop gnome-shell gnome-session gdm3 || true
+apt-get autoremove -y || true
+
+echo "OK: GNOME removed (if present)"

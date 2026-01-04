@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "== Buddy-OS assets hook =="
+
+if [ -d /usr/share/buddy-os/rootfs-overlay ]; then
+  rsync -a /usr/share/buddy-os/rootfs-overlay/ /
+  echo "OK: applied Buddy-OS rootfs overlay"
+else
+  echo "WARN: /usr/share/buddy-os/rootfs-overlay missing"
+fi

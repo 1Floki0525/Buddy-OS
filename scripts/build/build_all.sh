@@ -23,6 +23,10 @@ if [[ "${SKIP_SIGN:-0}" == "1" ]]; then
 else
   run_step "Sign model" "${ROOT_DIR}/scripts/build/sign_model.sh"
 fi
-run_step "Build Core image" "${ROOT_DIR}/scripts/build/build_core_image.sh"
+if [[ "${BUILD_ISO:-0}" == "1" ]]; then
+  run_step "Build ISO" "${ROOT_DIR}/scripts/build/build_iso.sh"
+else
+  run_step "Build Core image" "${ROOT_DIR}/scripts/build/build_core_image.sh"
+fi
 
 echo "OK: build complete, log at ${LOG_FILE}" | tee -a "${LOG_FILE}"
