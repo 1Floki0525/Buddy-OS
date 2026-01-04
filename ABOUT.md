@@ -201,3 +201,14 @@ The Buddy Dev Console is a GUI application that provides a shared terminal-like 
 - User intervention controls (pause, cancel, modify).
 
 This app allows users to observe Buddy’s actions in real-time and intervene if needed, ensuring full control over the autonomous development process.
+## Voice Activation Service
+
+The Buddy Voice service is a background daemon that continuously listens for voice commands and transcribes them to text using Whisper. It uses YOLO VAD for voice activity detection and Piper for text-to-speech responses.
+
+Key features:
+
+- Voice activity detection with YOLO VAD.
+- Real-time speech-to-text transcription with Whisper.
+- Text-to-speech responses with Piper (male/female voices).
+
+This service enables users to control Buddy AI via voice, making it a truly autonomous assistant.
