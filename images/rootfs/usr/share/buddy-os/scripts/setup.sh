@@ -4,7 +4,7 @@
 set -euo pipefail
 
 # Install dependencies
-if command -v apt-get &> /dev/null; then
+if command -v apt-get >/dev/null 2>&1; then
     echo "Installing system dependencies..."
     apt-get update
     apt-get install -y \
@@ -15,8 +15,8 @@ if command -v apt-get &> /dev/null; then
         xdotool \
         scrot \
         imagemagick \
-        docker.io \
-        
+        docker.io
+
     # Install pip dependencies
     echo "Installing Python dependencies..."
     pip3 install --user \
@@ -25,7 +25,7 @@ if command -v apt-get &> /dev/null; then
         pynput \
         requests
 
-elif command -v yum &> /dev/null; then
+elif command -v yum >/dev/null 2>&1; then
     echo "Installing system dependencies (CentOS/RHEL)..."
     yum install -y \
         python3-pip \
@@ -56,7 +56,7 @@ echo "\nVerifying installations..."
 python3 -c "import gi; import pyscreenshot; import pyautogui; import pynput; import requests" && echo "✅ Python modules installed" || echo "❌ Python modules installation failed"
 
 # Check system tools
-command -v xdotool &> /dev/null && echo "✅ xdotool installed" || echo "❌ xdotool not found"
-command -v docker &> /dev/null && echo "✅ docker installed" || echo "❌ docker not found"
+command -v xdotool >/dev/null 2>&1 && echo "✅ xdotool installed" || echo "❌ xdotool not found"
+command -v docker >/dev/null 2>&1 && echo "✅ docker installed" || echo "❌ docker not found"
 
 echo "\nInstallation complete!"

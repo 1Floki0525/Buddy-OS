@@ -1,0 +1,15 @@
+{
+  "ui": {
+    "theme": "cosmic",
+    "desktop": "cosmic",
+    "branding": {
+      "name": "Buddy-OS",
+      "version": "0.0.0",
+      "logo": "/usr/share/buddy-os/assets/icons/buddy-ai/icon.svg"
+    }
+  },
+  "services": {
+    "auto_start": ["buddy-broker", "buddy-copilot", "buddy-voice"],
+    "enabled": true
+  }
+}

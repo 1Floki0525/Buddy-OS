@@ -1,4 +1,4 @@
-#!/home/binary-god/Buddy-OS/buddy/copilot/venv/bin/python3
+#!/workspace/buddy/copilot/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

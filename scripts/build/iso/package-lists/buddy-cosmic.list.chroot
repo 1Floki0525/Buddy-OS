@@ -14,3 +14,10 @@ xdg-desktop-portal-cosmic
 flatpak
 ubiquity
 ubiquity-frontend-gtk
+
+# Additional Cosmic packages
+cosmic-terminal
+cosmic-edit
+cosmic-workspaces
+cosmic-app-library
+cosmic-os-installer

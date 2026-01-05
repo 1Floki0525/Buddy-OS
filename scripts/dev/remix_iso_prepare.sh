@@ -106,46 +106,50 @@ chmod -R u+w "$ISO_DIR" || true
 
 echo
 echo "==> Locating squashfs..."
-# Pop/Ubuntu can differ; be flexible.
-CANDIDATES=(
-  "$ISO_DIR/casper/filesystem.squashfs"
-  "$ISO_DIR/live/filesystem.squashfs"
-  "$ISO_DIR/casper/minimal.squashfs"
-  "$ISO_DIR/casper/minimal.standard.live.squashfs"
-  "$ISO_DIR/casper/minimal.standard.squashfs"
-  "$ISO_DIR/casper/ubuntu-desktop-minimal.squashfs"
-  "$ISO_DIR/casper/ubuntu-server-minimal.squashfs"
-)
+# Ubuntu 24.04.3 uses minimal.standard.live.squashfs
+CASPER="$ISO_DIR/casper"
 
-SQUASHFS_PATH=""
-for p in "${CANDIDATES[@]}"; do
-  if [[ -f "$p" ]]; then
-    SQUASHFS_PATH="$p"
-    break
-  fi
-done
+# Prefer the live rootfs squashfs on modern Ubuntu ISOs
+SQUASHFS_PATH="$(ls -1 "$CASPER"/*standard*live*.squashfs 2>/dev/null | head -n 1 || true)"
 
+# Fallback: pick the largest squashfs in casper/
 if [[ -z "$SQUASHFS_PATH" ]]; then
-  echo "ERROR: could not find a known squashfs under casper/ or live/"
-  echo "Looked for:"
-  for p in "${CANDIDATES[@]}"; do echo " - $p"; done
-  echo
-  echo "Found squashfs files:"
-  find "$ISO_DIR" -maxdepth 5 -type f \( -name "*.squashfs" -o -name "*.sfs" \) -print || true
-  exit 1
+  SQUASHFS_PATH="$(find "$CASPER" -maxdepth 1 -type f -name "*.squashfs" -printf '%s %p\n' 2>/dev/null \
+        | sort -nr | head -n 1 | awk '{print $2}')"
 fi
+
+if [[ -z "$SQUASHFS_PATH" ]] || [[ ! -f "$SQUASHFS_PATH" ]]; then
+  echo "ERROR: no squashfs found under $CASPER"
+  echo "Found files:"
+  find "$CASPER" -maxdepth 1 -type f -name "*.squashfs" -ls 2>/dev/null || true
+  exit 2
+fi
+
+echo "Using squashfs: $SQUASHFS_PATH"
 
 echo "Using squashfs: $SQUASHFS_PATH"
 
 echo
 echo "==> Unsquashing live filesystem..."
-unsquashfs -f -d "$SQUASH_DIR" "$SQUASHFS_PATH" >/dev/null
+# Skip device nodes during unsquash (will create them manually in chroot)
+# Exclude trusted xattrs that require privileged containers
+unsquashfs -f -d "$SQUASH_DIR" -no-devices -no-specials -xattrs-exclude '^trusted\.' "$SQUASHFS_PATH" >/dev/null
 
 echo
 echo "==> Applying rootfs overlay from repo: $OVERLAY_ROOTFS"
 if [[ -d "$OVERLAY_ROOTFS" ]]; then
   # Preserve symlinks and permissions, but avoid copying device nodes from overlay
   rsync -aHAX --no-devices --no-specials "$OVERLAY_ROOTFS"/ "$SQUASH_DIR"/
+fi
+
+# Copy Buddy-OS hooks to chroot
+HOOKS_SRC="$REPO_ROOT/scripts/build/iso/hooks"
+HOOKS_DEST="$SQUASH_DIR/usr/share/buddy-os/hooks"
+if [[ -d "$HOOKS_SRC" ]]; then
+  echo "==> Copying Buddy-OS hooks to chroot..."
+  mkdir -p "$HOOKS_DEST"
+  cp -a "$HOOKS_SRC"/*.chroot "$HOOKS_DEST"/
+  chmod +x "$HOOKS_DEST"/*.chroot
 fi
 
 # Normalize ownership inside the image to root:root (critical for a sane installed system)

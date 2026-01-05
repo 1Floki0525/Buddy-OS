@@ -1,0 +1,19 @@
+[Unit]
+Description=Buddy‑OS Core Broker (policy, memory, action execution)
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+# Working directory is the location of the repo inside the ISO
+WorkingDirectory=/usr/share/buddy-os/buddy/broker
+# Start the broker daemon
+ExecStart=/usr/bin/python3 /usr/share/buddy-os/buddy/broker/buddy_actionsd.py
+Restart=on-failure
+RestartSec=5
+# Log to the system journal
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

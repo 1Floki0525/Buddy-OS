@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# This hook removes the temporary authentication bypass after essential tools are installed
+
+echo "=== Buddy-OS Authentication Cleanup ==="
+
+# Remove the temporary apt configuration
+rm -f /etc/apt/apt.conf.d/99buddy-temp-bypass
+
+echo "Temporary authentication bypass removed"

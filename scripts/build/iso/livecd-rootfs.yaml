@@ -1,0 +1,17 @@
+# Livecd-rootfs configuration for Buddy-OS desktop build
+# This file tells livecd-rootfs to use our custom package list
+
+# Use our desktop package selection
+package-lists:
+  - buddy-desktop
+
+# Build a full desktop ISO
+variant: desktop
+type: iso
+
+# Include all components
+components:
+  - main
+  - restricted
+  - universe
+  - multiverse

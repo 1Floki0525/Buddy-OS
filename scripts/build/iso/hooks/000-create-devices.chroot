@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Create essential device nodes in chroot environment
+# This hook runs early to ensure /dev/null and other devices exist
+
+echo "== Creating essential device nodes =="
+
+# Create /dev directory if it doesn't exist
+mkdir -p /dev
+
+# Create essential character devices
+# Major 1, minor 3: /dev/null
+if [[ ! -e /dev/null ]]; then
+    mknod -m 666 /dev/null c 1 3
+    echo "Created /dev/null"
+fi
+
+# Major 1, minor 5: /dev/zero
+if [[ ! -e /dev/zero ]]; then
+    mknod -m 666 /dev/zero c 1 5
+    echo "Created /dev/zero"
+fi
+
+# Major 1, minor 7: /dev/full
+if [[ ! -e /dev/full ]]; then
+    mknod -m 666 /dev/full c 1 7
+    echo "Created /dev/full"
+fi
+
+# Major 5, minor 0: /dev/tty
+if [[ ! -e /dev/tty ]]; then
+    mknod -m 666 /dev/tty c 5 0
+    echo "Created /dev/tty"
+fi
+
+# Major 5, minor 2: /dev/ptmx
+if [[ ! -e /dev/ptmx ]]; then
+    mknod -m 666 /dev/ptmx c 5 2
+    echo "Created /dev/ptmx"
+fi
+
+# Major 1, minor 8: /dev/random
+if [[ ! -e /dev/random ]]; then
+    mknod -m 666 /dev/random c 1 8
+    echo "Created /dev/random"
+fi
+
+# Major 1, minor 9: /dev/urandom
+if [[ ! -e /dev/urandom ]]; then
+    mknod -m 666 /dev/urandom c 1 9
+    echo "Created /dev/urandom"
+fi
+
+# Major 5, minor 1: /dev/console
+if [[ ! -e /dev/console ]]; then
+    mknod -m 600 /dev/console c 5 1
+    echo "Created /dev/console"
+fi
+
+echo "== Device nodes created successfully =="

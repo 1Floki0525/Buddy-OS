@@ -1,0 +1,8 @@
+# Essential tools package list for Buddy‑OS ISO build
+# These packages are installed first to ensure the build can proceed
+
+gpgv
+gnupg
+apt-utils
+coreutils
+mknod

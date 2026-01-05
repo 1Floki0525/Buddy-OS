@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# This hook ensures GPG tools are installed before any package operations
+
+echo "=== Buddy-OS GPG Tools Installation ==="
+
+# Install GPG tools first
+apt-get update || true
+apt-get install -y --allow-unauthenticated gpgv gnupg
+
+echo "GPG tools installed"

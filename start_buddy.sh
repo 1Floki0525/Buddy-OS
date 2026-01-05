@@ -1,1 +1,1 @@
-scripts/dev/start_all_buddy.sh
+scripts/dev/start_buddy.sh

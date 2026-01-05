@@ -3,8 +3,9 @@
 
 set -euo pipefail
 
-# Install dependencies
-./install_dependencies.sh
+# Install dependencies (use path relative to this script's location)
+script_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+bash "$script_dir/install_dependencies.sh"
 
 # Build broker
 if [ -f "broker/buddy_actionsd.py" ]; then

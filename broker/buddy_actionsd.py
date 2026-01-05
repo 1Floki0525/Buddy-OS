@@ -35,15 +35,16 @@ from urllib.parse import urlparse, parse_qs
 from urllib.request import Request, urlopen
 from urllib.error import URLError, HTTPError
 
-# GUI Automation imports
+# GUI Automation imports – make robust against missing X display or other import errors
 try:
     import pyscreenshot as ImageGrab
     import pyautogui
     from pynput import mouse, keyboard
     PYAUTOGUI_AVAILABLE = True
-except ImportError:
+except Exception as e:
+    # Any exception (ImportError, OSError, KeyError for DISPLAY, etc.) disables GUI automation
     PYAUTOGUI_AVAILABLE = False
-    print("Warning: GUI automation libraries not available. Install with: pip install pyscreenshot pyautogui pynput")
+    print(f"Warning: GUI automation libraries not available ({e}). Screen‑control actions will be disabled.")
 
 # -----------------------------
 # Time / JSON helpers
@@ -123,6 +124,40 @@ class BuddyActionsDaemon:
         self.enable_screen_control = os.environ.get("BUDDY_ENABLE_SCREEN_CONTROL", "0").strip() in ("1", "true", "yes", "on")
         self.enable_docker_control = os.environ.get("BUDDY_ENABLE_DOCKER_CONTROL", "0").strip() in ("1", "true", "yes", "on")
         self.enable_network_admin = os.environ.get("BUDDY_ENABLE_NETWORK_ADMIN", "0").strip() in ("1", "true", "yes", "on")
+
+        # ---------- Persistent memory handling ----------
+        # Store a JSON blob that survives across broker restarts. This is used by the AI
+        # to retain user preferences, conversation history, etc.
+        self.memory_file = "/var/lib/buddy/memory.json"
+        self.memory = self._load_memory()
+
+    # ---------------------------------------------------------------------
+    # Memory persistence helpers
+    # ---------------------------------------------------------------------
+    def _load_memory(self) -> dict:
+        """Load the persistent memory JSON file. If it does not exist, create an empty dict.
+        The file is stored under /var/lib/buddy/memory.json which is writable by root.
+        """
+        try:
+            if not os.path.exists(self.memory_file):
+                os.makedirs(os.path.dirname(self.memory_file), exist_ok=True)
+                with open(self.memory_file, "w") as f:
+                    json.dump({}, f)
+                return {}
+            with open(self.memory_file, "r") as f:
+                return json.load(f)
+        except Exception as e:
+            logger.error(f"Failed to load Buddy memory: {e}")
+            return {}
+
+    def _save_memory(self) -> None:
+        """Write the current memory dict back to disk."""
+        try:
+            with open(self.memory_file, "w") as f:
+                json.dump(self.memory, f, indent=2)
+        except Exception as e:
+            logger.error(f"Failed to save Buddy memory: {e}")
+
 
         # Initialize GUI automation
         self._init_gui_automation()

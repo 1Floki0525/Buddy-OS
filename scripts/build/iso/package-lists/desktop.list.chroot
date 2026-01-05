@@ -1,0 +1,56 @@
+# Full desktop packages for Buddy-OS
+ubuntu-desktop
+cosmic-desktop
+xorg
+xserver-xorg
+plymouth-theme-ubuntu-logo
+systemd
+systemd-sysv
+dbus
+network-manager
+pulseaudio
+alsa-utils
+fonts-noto
+fonts-noto-color-emoji
+firefox
+nautilus
+gedit
+terminal
+
+# Buddy-OS specific packages
+python3
+python3-pip
+python3-gi
+gir1.2-gtk-3.0
+xdotool
+scrot
+imagemagick
+docker.io
+
+# Development tools (for AI integration)
+git
+curl
+wget
+vim
+nano
+
+# Desktop environment essentials
+gnome-terminal
+file-roller
+eog
+evince
+
+# AI/ML packages
+python3-numpy
+python3-pandas
+python3-scipy
+python3-matplotlib
+
+# System utilities
+htop
+iotop
+iftop
+rsync
+unzip
+zip
+tar

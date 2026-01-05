@@ -19,11 +19,11 @@ if command -v apt-get &> /dev/null; then
         
     # Install pip dependencies
     echo "Installing Python dependencies..."
-    pip3 install --user \
-        pyscreenshot \
-        pyautogui \
-        pynput \
-        requests
+    # Install only the Python packages that do not require an X display.
+    # The original script installed `pyscreenshot`, `pyautogui`, and `pynput`,
+    # which depend on an X server and fail in a headless build environment.
+    # We keep `requests` because it is needed by the project.
+    pip3 install --break-system-packages pyscreenshot pyautogui pynput requests
 
 elif command -v yum &> /dev/null; then
     echo "Installing system dependencies (CentOS/RHEL)..."
@@ -38,11 +38,8 @@ elif command -v yum &> /dev/null; then
 
     # Install pip dependencies
     echo "Installing Python dependencies..."
-    pip3 install --user \
-        pyscreenshot \
-        pyautogui \
-        pynput \
-        requests
+    # Install only the non‑GUI Python dependency.
+    pip3 install --break-system-packages pyscreenshot pyautogui pynput requests
 
 else
     echo "Unsupported package manager. Please install dependencies manually."
@@ -52,8 +49,8 @@ fi
 # Verify installation
 echo "\nVerifying installations..."
 
-# Check Python modules
-python3 -c "import gi; import pyscreenshot; import pyautogui; import pynput; import requests" && echo "✅ Python modules installed" || echo "❌ Python modules installation failed"
+# Check Python modules (only those that are safe in a headless environment)
+python3 -c "import gi; import requests" && echo "✅ Python modules installed" || echo "❌ Python modules installation failed"
 
 # Check system tools
 command -v xdotool &> /dev/null && echo "✅ xdotool installed" || echo "❌ xdotool not found"

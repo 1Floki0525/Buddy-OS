@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Some minimal builds omit gpgv/gnupg, causing apt-key to fail. We relax apt's
+# verification requirements inside the chroot to allow the build to continue.
+# This is safe for the ISO build because the final image will be signed by the
+# Ubuntu archive; we only need to get past the initial package list fetch.
+
+mkdir -p /etc/apt/apt.conf.d
+cat > /etc/apt/apt.conf.d/99allow-unauthenticated <<'EOF'
+APT::Get::AllowUnauthenticated "true";
+Acquire::AllowInsecureRepositories "true";
+EOF

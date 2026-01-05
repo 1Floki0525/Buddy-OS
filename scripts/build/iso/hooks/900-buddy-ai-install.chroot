@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# This hook installs Buddy AI components into the ISO
+# Runs after package installation but before final ISO assembly
+
+echo "=== Installing Buddy AI Components ==="
+
+# Create Buddy AI directories
+mkdir -p /usr/share/buddy-os
+mkdir -p /etc/buddy-os
+mkdir -p /etc/systemd/system
+
+# Copy Buddy AI components from overlay
+if [ -d /usr/share/buddy-os/rootfs-overlay ]; then
+    cp -a /usr/share/buddy-os/rootfs-overlay/* /
+fi
+
+# Copy package lists
+if [ -d /usr/share/buddy-os/package-lists ]; then
+    cp -a /usr/share/buddy-os/package-lists/* /
+fi
+
+# Copy systemd services
+if [ -d /usr/share/buddy-os/systemd ]; then
+    cp -a /usr/share/buddy-os/systemd/* /etc/systemd/system/
+fi
+
+# Copy Buddy AI configuration
+if [ -d /usr/share/buddy-os/config ]; then
+    cp -a /usr/share/buddy-os/config/* /etc/buddy-os/
+fi
+
+# Enable Buddy AI services
+systemctl enable buddy-broker.service
+systemctl enable buddy-copilot.service
+systemctl enable buddy-voice.service
+
+echo "=== Buddy AI installation complete ==="

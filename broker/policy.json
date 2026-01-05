@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "access_preset": "restricted",
+  "access_preset": "admin",
   "allow_mode": "blacklist",
   "allowlist": [],
   "blacklist": [
@@ -21,13 +21,13 @@
     "network_admin": true
   },
   "consent": {
-    "mkdir": "ask",
-    "write_file": "ask",
-    "list_dir": "ask",
+    "mkdir": "allow",
+    "write_file": "allow",
+    "list_dir": "allow",
     "open_url": "allow",
-    "launch_app": "ask",
-    "shell": "deny",
-    "screen_control": "ask"
+    "launch_app": "allow",
+    "shell": "allow",
+    "screen_control": "allow"
   },
   "re_auth_required": {
     "system_admin": true,

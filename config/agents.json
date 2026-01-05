@@ -1,0 +1,28 @@
+{
+  "agents": [
+    {
+      "name": "buddy-broker",
+      "description": "Buddy AI Broker Service",
+      "enabled": true,
+      "config": {
+        "service_name": "buddy-broker.service"
+      }
+    },
+    {
+      "name": "buddy-copilot", 
+      "description": "Buddy Copilot GUI",
+      "enabled": true,
+      "config": {
+        "service_name": "buddy-copilot.service"
+      }
+    },
+    {
+      "name": "buddy-voice",
+      "description": "Buddy Voice Service",
+      "enabled": true,
+      "config": {
+        "service_name": "buddy-voice.service"
+      }
+    }
+  ]
+}

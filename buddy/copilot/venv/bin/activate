@@ -1,6 +1,6 @@
 # This file must be used with "source bin/activate" *from bash*
 # You cannot run it directly
-
+export PKG_CONFIG_PATH=/usr/lib/x86_64-linux-gnu/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig
 deactivate () {
     # reset old environment variables
     if [ -n "${_OLD_VIRTUAL_PATH:-}" ] ; then
@@ -39,10 +39,10 @@ deactivate nondestructive
 if [ "${OSTYPE:-}" = "cygwin" ] || [ "${OSTYPE:-}" = "msys" ] ; then
     # transform D:\path\to\venv to /d/path/to/venv on MSYS
     # and to /cygdrive/d/path/to/venv on Cygwin
-    export VIRTUAL_ENV=$(cygpath /home/binary-god/Buddy-OS/buddy/copilot/venv)
+    export VIRTUAL_ENV=$(cygpath /workspace/buddy/copilot/venv)
 else
     # use the path as-is
-    export VIRTUAL_ENV=/home/binary-god/Buddy-OS/buddy/copilot/venv
+    export VIRTUAL_ENV=/workspace/buddy/copilot/venv
 fi
 
 _OLD_VIRTUAL_PATH="$PATH"

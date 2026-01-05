@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# This hook runs at the very start of the chroot build. It guarantees that /dev/null
+# exists as a writable character device, which is required by apt-key and other
+# tools that redirect output to /dev/null. Without this, the ISO build fails with
+# "cannot create /dev/null: Permission denied" and missing gpgv errors.
+
+if [ ! -e /dev/null ]; then
+    mkdir -p /dev
+    # major 1, minor 3 is the standard device for /dev/null
+    mknod -m 666 /dev/null c 1 3 || true
+fi

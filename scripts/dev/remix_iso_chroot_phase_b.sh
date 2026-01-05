@@ -64,6 +64,18 @@ echo "Inside chroot: $(uname -a)"
 if command -v lsb_release >/dev/null 2>&1; then lsb_release -a || true; fi
 if [[ -r /etc/os-release ]]; then . /etc/os-release; echo "Ubuntu: ${PRETTY_NAME:-unknown}"; fi
 
+# Run Buddy-OS hooks before any apt operations
+if [[ -d /usr/share/buddy-os/hooks ]]; then
+  echo
+  echo "==> Running Buddy-OS hooks..."
+  for hook in /usr/share/buddy-os/hooks/*.chroot; do
+    if [[ -f "$hook" ]] && [[ -x "$hook" ]]; then
+      echo "Running hook: $(basename "$hook")"
+      "$hook"
+    fi
+  done
+fi
+
 echo
 echo "==> APT update (in chroot)..."
 apt-get update

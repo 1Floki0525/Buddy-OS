@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# This hook temporarily allows unauthenticated packages to get past GPG verification issues
+# It's removed after the essential tools are installed
+
+echo "=== Buddy-OS Temporary Authentication Bypass ==="
+
+# Create a temporary apt configuration to allow unauthenticated packages
+cat > /etc/apt/apt.conf.d/99buddy-temp-bypass << 'EOF'
+APT::Get::AllowUnauthenticated "true";
+Acquire::AllowInsecureRepositories "true";
+EOF
+
+echo "Temporary authentication bypass enabled"
